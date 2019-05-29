@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SMHospitalDelDiaModelStoreContainer" CdmEntityContainer="SMHospitalDelDiaEntities">
+    <EntitySetMapping Name="AntecedentesPatologicos">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AntecedentesPatologicos">
+        <MappingFragment StoreEntitySet="AntecedentesPatologicos">
+          <ScalarProperty Name="idAntecedentes" ColumnName="idAntecedentes" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="AntecedentesPersonales" ColumnName="AntecedentesPersonales" />
+          <ScalarProperty Name="AntecedentesFamiliares" ColumnName="AntecedentesFamiliares" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Canton">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Canton">
+        <MappingFragment StoreEntitySet="Canton">
+          <ScalarProperty Name="idCanton" ColumnName="idCanton" />
+          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+          <ScalarProperty Name="canton1" ColumnName="canton" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaEstudioLaboratorio">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CategoriaEstudioLaboratorio">
+        <MappingFragment StoreEntitySet="CategoriaEstudioLaboratorio">
+          <ScalarProperty Name="idCategoriaEstudioLaboratorio" ColumnName="idCategoriaEstudioLaboratorio" />
+          <ScalarProperty Name="categoriaEstudioLaboratorio1" ColumnName="categoriaEstudioLaboratorio" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriaMedicamento">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CategoriaMedicamento">
+        <MappingFragment StoreEntitySet="CategoriaMedicamento">
+          <ScalarProperty Name="idCategoriaMedicamento" ColumnName="idCategoriaMedicamento" />
+          <ScalarProperty Name="categoriaMedicamento1" ColumnName="categoriaMedicamento" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoCIE">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CodigoCIE">
+        <MappingFragment StoreEntitySet="CodigoCIE">
+          <ScalarProperty Name="idCodigoCie" ColumnName="idCodigoCie" />
+          <ScalarProperty Name="codigoCIE1" ColumnName="codigoCIE" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="grabaIVA" ColumnName="grabaIVA" />
+          <ScalarProperty Name="nroFactura" ColumnName="nroFactura" />
+          <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CondicionEgreso">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CondicionEgreso">
+        <MappingFragment StoreEntitySet="CondicionEgreso">
+          <ScalarProperty Name="idCondicionEgreso" ColumnName="idCondicionEgreso" />
+          <ScalarProperty Name="condicionEgreso1" ColumnName="condicionEgreso" />
+          <ScalarProperty Name="codigoCondicion" ColumnName="codigoCondicion" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Consulta">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+          <ScalarProperty Name="idTipoConsulta" ColumnName="idTipoConsulta" />
+          <ScalarProperty Name="idSignosVitales" ColumnName="idSignosVitales" />
+          <ScalarProperty Name="idHistoriaClinica" ColumnName="idHistoriaClinica" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="sintomas" ColumnName="sintomas" />
+          <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+          <ScalarProperty Name="prescripcion" ColumnName="prescripcion" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+          <ScalarProperty Name="fum" ColumnName="fum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaEstudioLaboratorio">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.ConsultaEstudioLaboratorio">
+        <MappingFragment StoreEntitySet="ConsultaEstudioLaboratorio">
+          <ScalarProperty Name="idConsultaEstudioLaboratorio" ColumnName="idConsultaEstudioLaboratorio" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+          <ScalarProperty Name="idEstudioLaboratorio" ColumnName="idEstudioLaboratorio" />
+          <ScalarProperty Name="observacion" ColumnName="observacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Continente">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Continente">
+        <MappingFragment StoreEntitySet="Continente">
+          <ScalarProperty Name="idContinente" ColumnName="idContinente" />
+          <ScalarProperty Name="continente1" ColumnName="continente" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVenta">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="idDetalleVenta" ColumnName="idDetalleVenta" />
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Entidad">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Entidad">
+        <MappingFragment StoreEntitySet="Entidad">
+          <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+          <ScalarProperty Name="entidad1" ColumnName="entidad" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EspecialidadEgreso">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EspecialidadEgreso">
+        <MappingFragment StoreEntitySet="EspecialidadEgreso">
+          <ScalarProperty Name="idEspecialidadEgreso" ColumnName="idEspecialidadEgreso" />
+          <ScalarProperty Name="especialidadEgreso1" ColumnName="especialidadEgreso" />
+          <ScalarProperty Name="codigoEspecialidad" ColumnName="codigoEspecialidad" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EspecialidadProfesional">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EspecialidadProfesional">
+        <MappingFragment StoreEntitySet="EspecialidadProfesional">
+          <ScalarProperty Name="idEspecialidadProfesional" ColumnName="idEspecialidadProfesional" />
+          <ScalarProperty Name="especialidadProfesional1" ColumnName="especialidadProfesional" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Establecimiento">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Establecimiento">
+        <MappingFragment StoreEntitySet="Establecimiento">
+          <ScalarProperty Name="idEstablecimiento" ColumnName="idEstablecimiento" />
+          <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="representanteLegal" ColumnName="representanteLegal" />
+          <ScalarProperty Name="cedulaRepresentanteLegal" ColumnName="cedulaRepresentanteLegal" />
+          <ScalarProperty Name="redDeAtencion" ColumnName="redDeAtencion" />
+          <ScalarProperty Name="zona" ColumnName="zona" />
+          <ScalarProperty Name="permisoDeFuncionamiento" ColumnName="permisoDeFuncionamiento" />
+          <ScalarProperty Name="registroUnico" ColumnName="registroUnico" />
+          <ScalarProperty Name="logoUrl" ColumnName="logoUrl" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstudioLaboratorio">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EstudioLaboratorio">
+        <MappingFragment StoreEntitySet="EstudioLaboratorio">
+          <ScalarProperty Name="idEstudioLaboratorio" ColumnName="idEstudioLaboratorio" />
+          <ScalarProperty Name="idCategoriaEstudioLaboratorio" ColumnName="idCategoriaEstudioLaboratorio" />
+          <ScalarProperty Name="estudioLaboratorio1" ColumnName="estudioLaboratorio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Farmacia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Farmacia">
+        <MappingFragment StoreEntitySet="Farmacia">
+          <ScalarProperty Name="idFarmacia" ColumnName="idFarmacia" />
+          <ScalarProperty Name="idEstablecimiento" ColumnName="idEstablecimiento" />
+          <ScalarProperty Name="farmacia1" ColumnName="farmacia" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="extension" ColumnName="extension" />
+          <ScalarProperty Name="representante" ColumnName="representante" />
+          <ScalarProperty Name="cedulaRepresentante" ColumnName="cedulaRepresentante" />
+          <ScalarProperty Name="celularRepresentante" ColumnName="celularRepresentante" />
+          <ScalarProperty Name="tipoFarmacia" ColumnName="tipoFarmacia" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ginecologia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Ginecologia">
+        <MappingFragment StoreEntitySet="Ginecologia">
+          <ScalarProperty Name="idGinecologia" ColumnName="idGinecologia" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistoriaClinica">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.HistoriaClinica">
+        <MappingFragment StoreEntitySet="HistoriaClinica">
+          <ScalarProperty Name="idHiistoriaClinica" ColumnName="idHiistoriaClinica" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="nroHistoriaClinica" ColumnName="nroHistoriaClinica" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospitalizacion">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Hospitalizacion">
+        <MappingFragment StoreEntitySet="Hospitalizacion">
+          <ScalarProperty Name="idHospitalizacion" ColumnName="idHospitalizacion" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idCondicionEgreso" ColumnName="idCondicionEgreso" />
+          <ScalarProperty Name="idEspecialidadEgreso" ColumnName="idEspecialidadEgreso" />
+          <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+          <ScalarProperty Name="fechaEgreso" ColumnName="fechaEgreso" />
+          <ScalarProperty Name="horaIngreso" ColumnName="horaIngreso" />
+          <ScalarProperty Name="afeccionPrincipal" ColumnName="afeccionPrincipal" />
+          <ScalarProperty Name="otrasAfecciones" ColumnName="otrasAfecciones" />
+          <ScalarProperty Name="otrasAfecciones2" ColumnName="otrasAfecciones2" />
+          <ScalarProperty Name="causaExterna" ColumnName="causaExterna" />
+          <ScalarProperty Name="idCodigoCIEAfeccionPrincipal" ColumnName="idCodigoCIEAfeccionPrincipal" />
+          <ScalarProperty Name="idCodigoCIEAfeccionSecundaria" ColumnName="idCodigoCIEAfeccionSecundaria" />
+          <ScalarProperty Name="idCodigoCIECausaExterna" ColumnName="idCodigoCIECausaExterna" />
+          <ScalarProperty Name="alta" ColumnName="alta" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LinkArchivo">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.LinkArchivo">
+        <MappingFragment StoreEntitySet="LinkArchivo">
+          <ScalarProperty Name="idLinkArchivo" ColumnName="idLinkArchivo" />
+          <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+          <ScalarProperty Name="idItem" ColumnName="idItem" />
+          <ScalarProperty Name="nombreArchivo" ColumnName="nombreArchivo" />
+          <ScalarProperty Name="tipoArchivo" ColumnName="tipoArchivo" />
+          <ScalarProperty Name="textoEnlace" ColumnName="textoEnlace" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicamento">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Medicamento">
+        <MappingFragment StoreEntitySet="Medicamento">
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="idFarmacia" ColumnName="idFarmacia" />
+          <ScalarProperty Name="idCategoriaMedicamento" ColumnName="idCategoriaMedicamento" />
+          <ScalarProperty Name="nombreComercial" ColumnName="nombreComercial" />
+          <ScalarProperty Name="nombreGenerico" ColumnName="nombreGenerico" />
+          <ScalarProperty Name="ingresado" ColumnName="ingresado" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicamentoHospitalizacion">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.MedicamentoHospitalizacion">
+        <MappingFragment StoreEntitySet="MedicamentoHospitalizacion">
+          <ScalarProperty Name="idMedicamentoHospitalizacion" ColumnName="idMedicamentoHospitalizacion" />
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="idHospitalizacion" ColumnName="idHospitalizacion" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="notasDeEvolucion" ColumnName="notasDeEvolucion" />
+          <ScalarProperty Name="prescripcionMedica" ColumnName="prescripcionMedica" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menu">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+          <ScalarProperty Name="menu1" ColumnName="menu" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Obstetricia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Obstetricia">
+        <MappingFragment StoreEntitySet="Obstetricia">
+          <ScalarProperty Name="idObstetricia" ColumnName="idObstetricia" />
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="fecPrimerParto" ColumnName="fecPrimerParto" />
+          <ScalarProperty Name="gestas" ColumnName="gestas" />
+          <ScalarProperty Name="partos" ColumnName="partos" />
+          <ScalarProperty Name="cesareas" ColumnName="cesareas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Odontologia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Odontologia">
+        <MappingFragment StoreEntitySet="Odontologia">
+          <ScalarProperty Name="idOdontologia" ColumnName="idOdontologia" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+          <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+          <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="fecNacimiento" ColumnName="fecNacimiento" />
+          <ScalarProperty Name="etnia" ColumnName="etnia" />
+          <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+          <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+          <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+          <ScalarProperty Name="discapacidad" ColumnName="discapacidad" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Pais">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="idContinente" ColumnName="idContinente" />
+          <ScalarProperty Name="pais1" ColumnName="pais" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parroquia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Parroquia">
+        <MappingFragment StoreEntitySet="Parroquia">
+          <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+          <ScalarProperty Name="idCanton" ColumnName="idCanton" />
+          <ScalarProperty Name="parroquia1" ColumnName="parroquia" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Path">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Path">
+        <MappingFragment StoreEntitySet="Path">
+          <ScalarProperty Name="idPath" ColumnName="idPath" />
+          <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+          <ScalarProperty Name="idSubMenu" ColumnName="idSubMenu" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="icono" ColumnName="icono" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pediatria">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Pediatria">
+        <MappingFragment StoreEntitySet="Pediatria">
+          <ScalarProperty Name="idPediatria" ColumnName="idPediatria" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PermisoPerfil">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.PermisoPerfil">
+        <MappingFragment StoreEntitySet="PermisoPerfil">
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+          <ScalarProperty Name="idPermisoPerfil" ColumnName="idPermisoPerfil" />
+          <ScalarProperty Name="idPath" ColumnName="idPath" />
+          <ScalarProperty Name="idRol" ColumnName="idRol" />
+          <ScalarProperty Name="selecciona" ColumnName="selecciona" />
+          <ScalarProperty Name="inserta" ColumnName="inserta" />
+          <ScalarProperty Name="actualiza" ColumnName="actualiza" />
+          <ScalarProperty Name="elimina" ColumnName="elimina" />
+          <ScalarProperty Name="mostrarEnMenu" ColumnName="mostrarEnMenu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Precio">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Precio">
+        <MappingFragment StoreEntitySet="Precio">
+          <ScalarProperty Name="idPrecio" ColumnName="idPrecio" />
+          <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+          <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+          <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+          <ScalarProperty Name="precio1" ColumnName="precio" />
+          <ScalarProperty Name="grabaIVA" ColumnName="grabaIVA" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Proveedor">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Proveedor">
+        <MappingFragment StoreEntitySet="Proveedor">
+          <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+          <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+          <ScalarProperty Name="ruc" ColumnName="ruc" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="contacto" ColumnName="contacto" />
+          <ScalarProperty Name="telefonoContacto" ColumnName="telefonoContacto" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Provincia">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Provincia">
+        <MappingFragment StoreEntitySet="Provincia">
+          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="provincia1" ColumnName="provincia" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receta">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Receta">
+        <MappingFragment StoreEntitySet="Receta">
+          <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+          <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+          <ScalarProperty Name="receta1" ColumnName="receta" />
+          <ScalarProperty Name="dosis" ColumnName="dosis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResultadoEstudioLaboratorio">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.ResultadoEstudioLaboratorio">
+        <MappingFragment StoreEntitySet="ResultadoEstudioLaboratorio">
+          <ScalarProperty Name="idResultadoEstudioLaboratorio" ColumnName="idResultadoEstudioLaboratorio" />
+          <ScalarProperty Name="idConsultaEstudioLaboratorio" ColumnName="idConsultaEstudioLaboratorio" />
+          <ScalarProperty Name="resultadoEstudioLaboratorio1" ColumnName="resultadoEstudioLaboratorio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SignosVitales">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.SignosVitales">
+        <MappingFragment StoreEntitySet="SignosVitales">
+          <ScalarProperty Name="idSignosVitales" ColumnName="idSignosVitales" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="talla" ColumnName="talla" />
+          <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+          <ScalarProperty Name="frecuenciaCardiaca" ColumnName="frecuenciaCardiaca" />
+          <ScalarProperty Name="presionArterial" ColumnName="presionArterial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="subMenu">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.subMenu">
+        <MappingFragment StoreEntitySet="subMenu">
+          <ScalarProperty Name="idSubMenu" ColumnName="idSubMenu" />
+          <ScalarProperty Name="submenu1" ColumnName="submenu" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoConsulta">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.TipoConsulta">
+        <MappingFragment StoreEntitySet="TipoConsulta">
+          <ScalarProperty Name="idTipoConsulta" ColumnName="idTipoConsulta" />
+          <ScalarProperty Name="tipoConsulta1" ColumnName="tipoConsulta" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoDocumento">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.TipoDocumento">
+        <MappingFragment StoreEntitySet="TipoDocumento">
+          <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+          <ScalarProperty Name="tipoDocumento1" ColumnName="tipoDocumento" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transaccion">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Transaccion">
+        <MappingFragment StoreEntitySet="Transaccion">
+          <ScalarProperty Name="idTransaccion" ColumnName="idTransaccion" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+          <ScalarProperty Name="idItem" ColumnName="idItem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venta">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="cliente" ColumnName="cliente" />
+          <ScalarProperty Name="documento" ColumnName="documento" />
+          <ScalarProperty Name="subtotal12" ColumnName="subtotal12" />
+          <ScalarProperty Name="subtotal0" ColumnName="subtotal0" />
+          <ScalarProperty Name="iva" ColumnName="iva" />
+          <ScalarProperty Name="ice" ColumnName="ice" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="borrado" ColumnName="borrado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetRoles">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetRoles">
+        <MappingFragment StoreEntitySet="AspNetRoles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserClaims">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUserClaims">
+        <MappingFragment StoreEntitySet="AspNetUserClaims">
+          <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+          <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUserLogins">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUserLogins">
+        <MappingFragment StoreEntitySet="AspNetUserLogins">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+          <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AspNetUsers">
+      <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUsers">
+        <MappingFragment StoreEntitySet="AspNetUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+          <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+          <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+          <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+          <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+          <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+          <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+          <ScalarProperty Name="genero" ColumnName="genero" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="nombres" ColumnName="nombres" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="cedula" ColumnName="cedula" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AspNetUserRoles" TypeName="SMHospitalDelDiaModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+      <EndProperty Name="AspNetUsers">
+        <ScalarProperty Name="Id" ColumnName="UserId" />
+      </EndProperty>
+      <EndProperty Name="AspNetRoles">
+        <ScalarProperty Name="Id" ColumnName="RoleId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

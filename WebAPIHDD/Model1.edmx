@@ -1,0 +1,3348 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SMHospitalDelDiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AntecedentesPatologicos">
+          <Key>
+            <PropertyRef Name="idAntecedentes" />
+          </Key>
+          <Property Name="idAntecedentes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="AntecedentesPersonales" Type="ntext" />
+          <Property Name="AntecedentesFamiliares" Type="ntext" />
+        </EntityType>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ClaimType" Type="nvarchar(max)" />
+          <Property Name="ClaimValue" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUserRoles">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="cedula" Type="nvarchar(max)" />
+          <Property Name="Hometown" Type="nvarchar(max)" />
+          <Property Name="nombres" Type="nvarchar(max)" />
+          <Property Name="apellidos" Type="nvarchar(max)" />
+          <Property Name="direccion" Type="nvarchar(max)" />
+          <Property Name="genero" Type="nvarchar(max)" />
+          <Property Name="fechaNacimiento" Type="datetime" />
+          <Property Name="titulo" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar" MaxLength="256" />
+          <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+          <Property Name="PasswordHash" Type="nvarchar(max)" />
+          <Property Name="SecurityStamp" Type="nvarchar(max)" />
+          <Property Name="PhoneNumber" Type="nvarchar(max)" />
+          <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="datetime" />
+          <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Canton">
+          <Key>
+            <PropertyRef Name="idCanton" />
+          </Key>
+          <Property Name="idCanton" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProvincia" Type="int" />
+          <Property Name="canton" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="CategoriaEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+          </Key>
+          <Property Name="idCategoriaEstudioLaboratorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoriaEstudioLaboratorio" Type="nvarchar" MaxLength="500" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="CategoriaMedicamento">
+          <Key>
+            <PropertyRef Name="idCategoriaMedicamento" />
+          </Key>
+          <Property Name="idCategoriaMedicamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="categoriaMedicamento" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="CodigoCIE">
+          <Key>
+            <PropertyRef Name="idCodigoCie" />
+          </Key>
+          <Property Name="idCodigoCie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="codigoCIE" Type="nvarchar" MaxLength="200" />
+          <Property Name="descripcion" Type="ntext" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="idCompra" />
+          </Key>
+          <Property Name="idCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idProveedor" Type="int" />
+          <Property Name="idMedicamento" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="grabaIVA" Type="char" MaxLength="1" />
+          <Property Name="nroFactura" Type="nvarchar" MaxLength="300" />
+          <Property Name="precioUnitario" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="iva" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="CondicionEgreso">
+          <Key>
+            <PropertyRef Name="idCondicionEgreso" />
+          </Key>
+          <Property Name="idCondicionEgreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="condicionEgreso" Type="nvarchar" MaxLength="400" />
+          <Property Name="codigoCondicion" Type="nvarchar" MaxLength="10" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+          </Key>
+          <Property Name="idConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTipoConsulta" Type="int" />
+          <Property Name="idSignosVitales" Type="int" />
+          <Property Name="idHistoriaClinica" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="sintomas" Type="ntext" />
+          <Property Name="diagnostico" Type="ntext" />
+          <Property Name="prescripcion" Type="ntext" />
+          <Property Name="observacion" Type="ntext" />
+          <Property Name="fum" Type="date" />
+        </EntityType>
+        <EntityType Name="ConsultaEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idConsultaEstudioLaboratorio" />
+          </Key>
+          <Property Name="idConsultaEstudioLaboratorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+          <Property Name="idEstudioLaboratorio" Type="int" />
+          <Property Name="observacion" Type="ntext" />
+        </EntityType>
+        <EntityType Name="Continente">
+          <Key>
+            <PropertyRef Name="idContinente" />
+          </Key>
+          <Property Name="idContinente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="continente" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="DetalleVenta">
+          <Key>
+            <PropertyRef Name="idDetalleVenta" />
+          </Key>
+          <Property Name="idDetalleVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMedicamento" Type="int" />
+          <Property Name="idVenta" Type="int" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Entidad">
+          <Key>
+            <PropertyRef Name="idEntidad" />
+          </Key>
+          <Property Name="idEntidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="entidad" Type="nvarchar" MaxLength="200" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="500" />
+          <Property Name="activo" Type="bit" />
+        </EntityType>
+        <EntityType Name="EspecialidadEgreso">
+          <Key>
+            <PropertyRef Name="idEspecialidadEgreso" />
+          </Key>
+          <Property Name="idEspecialidadEgreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="especialidadEgreso" Type="nvarchar" MaxLength="300" />
+          <Property Name="codigoEspecialidad" Type="nvarchar" MaxLength="10" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="EspecialidadProfesional">
+          <Key>
+            <PropertyRef Name="idEspecialidadProfesional" />
+          </Key>
+          <Property Name="idEspecialidadProfesional" Type="int" Nullable="false" />
+          <Property Name="especialidadProfesional" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Establecimiento">
+          <Key>
+            <PropertyRef Name="idEstablecimiento" />
+          </Key>
+          <Property Name="idEstablecimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idParroquia" Type="int" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="500" />
+          <Property Name="direccion" Type="ntext" />
+          <Property Name="representanteLegal" Type="nvarchar" MaxLength="500" />
+          <Property Name="cedulaRepresentanteLegal" Type="nvarchar" MaxLength="50" />
+          <Property Name="redDeAtencion" Type="nvarchar" MaxLength="500" />
+          <Property Name="zona" Type="nvarchar" MaxLength="200" />
+          <Property Name="permisoDeFuncionamiento" Type="nvarchar" MaxLength="500" />
+          <Property Name="registroUnico" Type="nvarchar" MaxLength="200" />
+          <Property Name="logoUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="EstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idEstudioLaboratorio" />
+          </Key>
+          <Property Name="idEstudioLaboratorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCategoriaEstudioLaboratorio" Type="int" />
+          <Property Name="estudioLaboratorio" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Farmacia">
+          <Key>
+            <PropertyRef Name="idFarmacia" />
+          </Key>
+          <Property Name="idFarmacia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEstablecimiento" Type="int" />
+          <Property Name="farmacia" Type="nvarchar" MaxLength="500" />
+          <Property Name="numero" Type="nvarchar" MaxLength="100" />
+          <Property Name="extension" Type="nvarchar" MaxLength="50" />
+          <Property Name="representante" Type="nvarchar" MaxLength="200" />
+          <Property Name="cedulaRepresentante" Type="nvarchar" MaxLength="50" />
+          <Property Name="celularRepresentante" Type="nvarchar" MaxLength="10" />
+          <Property Name="tipoFarmacia" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Ginecologia">
+          <Key>
+            <PropertyRef Name="idGinecologia" />
+          </Key>
+          <Property Name="idGinecologia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+        </EntityType>
+        <EntityType Name="HistoriaClinica">
+          <Key>
+            <PropertyRef Name="idHiistoriaClinica" />
+          </Key>
+          <Property Name="idHiistoriaClinica" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="nroHistoriaClinica" Type="nvarchar" MaxLength="200" />
+          <Property Name="fecha" Type="date" />
+        </EntityType>
+        <EntityType Name="Hospitalizacion">
+          <Key>
+            <PropertyRef Name="idHospitalizacion" />
+          </Key>
+          <Property Name="idHospitalizacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="idCondicionEgreso" Type="int" />
+          <Property Name="idEspecialidadEgreso" Type="int" />
+          <Property Name="fechaIngreso" Type="date" />
+          <Property Name="fechaEgreso" Type="date" />
+          <Property Name="horaIngreso" Type="time" Precision="7" />
+          <Property Name="afeccionPrincipal" Type="ntext" />
+          <Property Name="otrasAfecciones" Type="ntext" />
+          <Property Name="otrasAfecciones2" Type="ntext" />
+          <Property Name="causaExterna" Type="ntext" />
+          <Property Name="idCodigoCIEAfeccionPrincipal" Type="int" />
+          <Property Name="idCodigoCIEAfeccionSecundaria" Type="int" />
+          <Property Name="idCodigoCIECausaExterna" Type="int" />
+          <Property Name="alta" Type="bit" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="LinkArchivo">
+          <Key>
+            <PropertyRef Name="idLinkArchivo" />
+          </Key>
+          <Property Name="idLinkArchivo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idEntidad" Type="int" />
+          <Property Name="idItem" Type="int" />
+          <Property Name="nombreArchivo" Type="nvarchar" MaxLength="400" />
+          <Property Name="tipoArchivo" Type="nchar" MaxLength="10" />
+          <Property Name="textoEnlace" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="idMedicamento" />
+          </Key>
+          <Property Name="idMedicamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idFarmacia" Type="int" />
+          <Property Name="idCategoriaMedicamento" Type="int" />
+          <Property Name="nombreComercial" Type="nvarchar" MaxLength="500" />
+          <Property Name="nombreGenerico" Type="nvarchar" MaxLength="500" />
+          <Property Name="ingresado" Type="bit" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="MedicamentoHospitalizacion">
+          <Key>
+            <PropertyRef Name="idMedicamentoHospitalizacion" />
+          </Key>
+          <Property Name="idMedicamentoHospitalizacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMedicamento" Type="int" />
+          <Property Name="idHospitalizacion" Type="int" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="hora" Type="time" Precision="7" />
+          <Property Name="notasDeEvolucion" Type="ntext" />
+          <Property Name="prescripcionMedica" Type="ntext" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="idMenu" />
+          </Key>
+          <Property Name="idMenu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menu" Type="nvarchar" MaxLength="100" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Obstetricia">
+          <Key>
+            <PropertyRef Name="idObstetricia" />
+          </Key>
+          <Property Name="idObstetricia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPaciente" Type="int" />
+          <Property Name="fecPrimerParto" Type="date" />
+          <Property Name="gestas" Type="int" />
+          <Property Name="partos" Type="int" />
+          <Property Name="cesareas" Type="int" />
+        </EntityType>
+        <EntityType Name="Odontologia">
+          <Key>
+            <PropertyRef Name="idOdontologia" />
+          </Key>
+          <Property Name="idOdontologia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="int" Nullable="false" />
+          <Property Name="idParroquia" Type="int" />
+          <Property Name="idTipoDocumento" Type="int" />
+          <Property Name="nombres" Type="nvarchar" MaxLength="200" />
+          <Property Name="apellidos" Type="nvarchar" MaxLength="200" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="200" />
+          <Property Name="celular" Type="nvarchar" MaxLength="10" />
+          <Property Name="telefono" Type="nvarchar" MaxLength="13" />
+          <Property Name="genero" Type="char" MaxLength="1" />
+          <Property Name="fecNacimiento" Type="date" />
+          <Property Name="etnia" Type="char" MaxLength="1" />
+          <Property Name="estadoCivil" Type="char" MaxLength="1" />
+          <Property Name="nacionalidad" Type="char" MaxLength="1" />
+          <Property Name="paisNacimiento" Type="nvarchar" MaxLength="200" />
+          <Property Name="discapacidad" Type="char" MaxLength="1" />
+          <Property Name="email" Type="nvarchar" MaxLength="300" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="idPais" />
+          </Key>
+          <Property Name="idPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idContinente" Type="int" />
+          <Property Name="pais" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Parroquia">
+          <Key>
+            <PropertyRef Name="idParroquia" />
+          </Key>
+          <Property Name="idParroquia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idCanton" Type="int" />
+          <Property Name="parroquia" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Path">
+          <Key>
+            <PropertyRef Name="idPath" />
+          </Key>
+          <Property Name="idPath" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMenu" Type="int" />
+          <Property Name="idSubMenu" Type="int" />
+          <Property Name="url" Type="nvarchar" MaxLength="500" />
+          <Property Name="icono" Type="nvarchar" MaxLength="500" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Pediatria">
+          <Key>
+            <PropertyRef Name="idPediatria" />
+          </Key>
+          <Property Name="idPediatria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+        </EntityType>
+        <EntityType Name="PermisoPerfil">
+          <Key>
+            <PropertyRef Name="idPermisoPerfil" />
+          </Key>
+          <Property Name="idPermisoPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPath" Type="int" />
+          <Property Name="idRol" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="selecciona" Type="bit" />
+          <Property Name="inserta" Type="bit" />
+          <Property Name="actualiza" Type="bit" />
+          <Property Name="elimina" Type="bit" />
+          <Property Name="mostrarEnMenu" Type="bit" />
+          <Property Name="borrado" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Precio">
+          <Key>
+            <PropertyRef Name="idPrecio" />
+          </Key>
+          <Property Name="idPrecio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idMedicamento" Type="int" />
+          <Property Name="fechaInicio" Type="date" />
+          <Property Name="fechaFin" Type="date" />
+          <Property Name="precio" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="grabaIVA" Type="bit" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="razonSocial" Type="nvarchar" MaxLength="500" />
+          <Property Name="ruc" Type="nvarchar" MaxLength="13" />
+          <Property Name="direccion" Type="nvarchar" MaxLength="300" />
+          <Property Name="contacto" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefonoContacto" Type="nvarchar" MaxLength="50" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="idProvincia" />
+          </Key>
+          <Property Name="idProvincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idPais" Type="int" />
+          <Property Name="provincia" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Receta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsulta" Type="int" />
+          <Property Name="receta" Type="ntext" />
+          <Property Name="dosis" Type="ntext" />
+        </EntityType>
+        <EntityType Name="ResultadoEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idResultadoEstudioLaboratorio" />
+          </Key>
+          <Property Name="idResultadoEstudioLaboratorio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idConsultaEstudioLaboratorio" Type="int" />
+          <Property Name="resultadoEstudioLaboratorio" Type="ntext" />
+        </EntityType>
+        <EntityType Name="SignosVitales">
+          <Key>
+            <PropertyRef Name="idSignosVitales" />
+          </Key>
+          <Property Name="idSignosVitales" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="peso" Type="nvarchar" MaxLength="200" />
+          <Property Name="talla" Type="nvarchar" MaxLength="200" />
+          <Property Name="temperatura" Type="nvarchar" MaxLength="200" />
+          <Property Name="frecuenciaCardiaca" Type="nvarchar" MaxLength="200" />
+          <Property Name="presionArterial" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="subMenu">
+          <Key>
+            <PropertyRef Name="idSubMenu" />
+          </Key>
+          <Property Name="idSubMenu" Type="int" Nullable="false" />
+          <Property Name="submenu" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TipoConsulta">
+          <Key>
+            <PropertyRef Name="idTipoConsulta" />
+          </Key>
+          <Property Name="idTipoConsulta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoConsulta" Type="nvarchar" MaxLength="200" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="TipoDocumento">
+          <Key>
+            <PropertyRef Name="idTipoDocumento" />
+          </Key>
+          <Property Name="idTipoDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipoDocumento" Type="nvarchar" MaxLength="50" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <EntityType Name="Transaccion">
+          <Key>
+            <PropertyRef Name="idTransaccion" />
+          </Key>
+          <Property Name="idTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tipo" Type="int" />
+          <Property Name="usuario" Type="nvarchar" MaxLength="200" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="idEntidad" Type="int" />
+          <Property Name="idItem" Type="int" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="cliente" Type="nvarchar" MaxLength="200" />
+          <Property Name="documento" Type="nchar" MaxLength="13" />
+          <Property Name="subtotal12" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="subtotal0" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="iva" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ice" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="total" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="date" />
+        </EntityType>
+        <Association Name="FK_AntecedentesPatologicos_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="AntecedentesPatologicos" Type="Self.AntecedentesPatologicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="AntecedentesPatologicos">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Canton_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Canton" Type="Self.Canton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="idProvincia" />
+            </Principal>
+            <Dependent Role="Canton">
+              <PropertyRef Name="idProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Proveedor">
+          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_HistoriaClinica">
+          <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HistoriaClinica">
+              <PropertyRef Name="idHiistoriaClinica" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idHistoriaClinica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_SignosVitales">
+          <End Role="SignosVitales" Type="Self.SignosVitales" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignosVitales">
+              <PropertyRef Name="idSignosVitales" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idSignosVitales" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_TipoConsulta">
+          <End Role="TipoConsulta" Type="Self.TipoConsulta" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoConsulta">
+              <PropertyRef Name="idTipoConsulta" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idTipoConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultaEstudioLaboratorio_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultaEstudioLaboratorio_EstudioLaboratorio">
+          <End Role="EstudioLaboratorio" Type="Self.EstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstudioLaboratorio">
+              <PropertyRef Name="idEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+          <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleVenta_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleVenta_Venta">
+          <End Role="Venta" Type="Self.Venta" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Establecimiento_Parroquia">
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="0..1" />
+          <End Role="Establecimiento" Type="Self.Establecimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parroquia">
+              <PropertyRef Name="idParroquia" />
+            </Principal>
+            <Dependent Role="Establecimiento">
+              <PropertyRef Name="idParroquia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstudioLaboratorio_CategoriaEstudioLaboratorio">
+          <End Role="CategoriaEstudioLaboratorio" Type="Self.CategoriaEstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="EstudioLaboratorio" Type="Self.EstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaEstudioLaboratorio">
+              <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="EstudioLaboratorio">
+              <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmacia_Establecimiento">
+          <End Role="Establecimiento" Type="Self.Establecimiento" Multiplicity="0..1" />
+          <End Role="Farmacia" Type="Self.Farmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Establecimiento">
+              <PropertyRef Name="idEstablecimiento" />
+            </Principal>
+            <Dependent Role="Farmacia">
+              <PropertyRef Name="idEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ginecologia_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Ginecologia" Type="Self.Ginecologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Ginecologia">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoriaClinica_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="HistoriaClinica">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIEAfeccionPrincipal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE1">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIEAfeccionSecundaria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE2">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIECausaExterna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CondicionEgreso">
+          <End Role="CondicionEgreso" Type="Self.CondicionEgreso" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionEgreso">
+              <PropertyRef Name="idCondicionEgreso" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCondicionEgreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_EspecialidadEgreso">
+          <End Role="EspecialidadEgreso" Type="Self.EspecialidadEgreso" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EspecialidadEgreso">
+              <PropertyRef Name="idEspecialidadEgreso" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idEspecialidadEgreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LinkArchivo_Entidad">
+          <End Role="Entidad" Type="Self.Entidad" Multiplicity="0..1" />
+          <End Role="LinkArchivo" Type="Self.LinkArchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="idEntidad" />
+            </Principal>
+            <Dependent Role="LinkArchivo">
+              <PropertyRef Name="idEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicamento_CategoriaMedicamento">
+          <End Role="CategoriaMedicamento" Type="Self.CategoriaMedicamento" Multiplicity="0..1" />
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaMedicamento">
+              <PropertyRef Name="idCategoriaMedicamento" />
+            </Principal>
+            <Dependent Role="Medicamento">
+              <PropertyRef Name="idCategoriaMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicamento_Farmacia">
+          <End Role="Farmacia" Type="Self.Farmacia" Multiplicity="0..1" />
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farmacia">
+              <PropertyRef Name="idFarmacia" />
+            </Principal>
+            <Dependent Role="Medicamento">
+              <PropertyRef Name="idFarmacia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicamentoHospitalizacion_Hospitalizacion">
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="0..1" />
+          <End Role="MedicamentoHospitalizacion" Type="Self.MedicamentoHospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospitalizacion">
+              <PropertyRef Name="idHospitalizacion" />
+            </Principal>
+            <Dependent Role="MedicamentoHospitalizacion">
+              <PropertyRef Name="idHospitalizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicamentoHospitalizacion_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="MedicamentoHospitalizacion" Type="Self.MedicamentoHospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="MedicamentoHospitalizacion">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Obstetricia_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Obstetricia" Type="Self.Obstetricia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Obstetricia">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odontologia_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Odontologia" Type="Self.Odontologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Odontologia">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_Parroquia">
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="0..1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parroquia">
+              <PropertyRef Name="idParroquia" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idParroquia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_TipoDocumento">
+          <End Role="TipoDocumento" Type="Self.TipoDocumento" Multiplicity="0..1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pais_Continente">
+          <End Role="Continente" Type="Self.Continente" Multiplicity="0..1" />
+          <End Role="Pais" Type="Self.Pais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Continente">
+              <PropertyRef Name="idContinente" />
+            </Principal>
+            <Dependent Role="Pais">
+              <PropertyRef Name="idContinente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parroquia_Canton">
+          <End Role="Canton" Type="Self.Canton" Multiplicity="0..1" />
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Canton">
+              <PropertyRef Name="idCanton" />
+            </Principal>
+            <Dependent Role="Parroquia">
+              <PropertyRef Name="idCanton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Path_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+          <End Role="Path" Type="Self.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="idMenu" />
+            </Principal>
+            <Dependent Role="Path">
+              <PropertyRef Name="idMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Path_subMenu">
+          <End Role="subMenu" Type="Self.subMenu" Multiplicity="0..1" />
+          <End Role="Path" Type="Self.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subMenu">
+              <PropertyRef Name="idSubMenu" />
+            </Principal>
+            <Dependent Role="Path">
+              <PropertyRef Name="idSubMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pediatria_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Pediatria" Type="Self.Pediatria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Pediatria">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermisoPerfil_AspNetRoles">
+          <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1" />
+          <End Role="PermisoPerfil" Type="Self.PermisoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisoPerfil">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermisoPerfil_Path">
+          <End Role="Path" Type="Self.Path" Multiplicity="0..1" />
+          <End Role="PermisoPerfil" Type="Self.PermisoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Path">
+              <PropertyRef Name="idPath" />
+            </Principal>
+            <Dependent Role="PermisoPerfil">
+              <PropertyRef Name="idPath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Precio_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Precio" Type="Self.Precio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="Precio">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provincia_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Provincia">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receta_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Receta" Type="Self.Receta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Receta">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio">
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="ResultadoEstudioLaboratorio" Type="Self.ResultadoEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idConsultaEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="ResultadoEstudioLaboratorio">
+              <PropertyRef Name="idConsultaEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaccion_Entidad">
+          <End Role="Entidad" Type="Self.Entidad" Multiplicity="0..1" />
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="idEntidad" />
+            </Principal>
+            <Dependent Role="Transaccion">
+              <PropertyRef Name="idEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SMHospitalDelDiaModelStoreContainer">
+          <EntitySet Name="AntecedentesPatologicos" EntityType="Self.AntecedentesPatologicos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Canton" EntityType="Self.Canton" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriaEstudioLaboratorio" EntityType="Self.CategoriaEstudioLaboratorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriaMedicamento" EntityType="Self.CategoriaMedicamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodigoCIE" EntityType="Self.CodigoCIE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CondicionEgreso" EntityType="Self.CondicionEgreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ConsultaEstudioLaboratorio" EntityType="Self.ConsultaEstudioLaboratorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Continente" EntityType="Self.Continente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Entidad" EntityType="Self.Entidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EspecialidadEgreso" EntityType="Self.EspecialidadEgreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EspecialidadProfesional" EntityType="Self.EspecialidadProfesional" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Establecimiento" EntityType="Self.Establecimiento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstudioLaboratorio" EntityType="Self.EstudioLaboratorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Farmacia" EntityType="Self.Farmacia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ginecologia" EntityType="Self.Ginecologia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistoriaClinica" EntityType="Self.HistoriaClinica" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hospitalizacion" EntityType="Self.Hospitalizacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LinkArchivo" EntityType="Self.LinkArchivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MedicamentoHospitalizacion" EntityType="Self.MedicamentoHospitalizacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Obstetricia" EntityType="Self.Obstetricia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Odontologia" EntityType="Self.Odontologia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parroquia" EntityType="Self.Parroquia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Path" EntityType="Self.Path" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pediatria" EntityType="Self.Pediatria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PermisoPerfil" EntityType="Self.PermisoPerfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Precio" EntityType="Self.Precio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receta" EntityType="Self.Receta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResultadoEstudioLaboratorio" EntityType="Self.ResultadoEstudioLaboratorio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SignosVitales" EntityType="Self.SignosVitales" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subMenu" EntityType="Self.subMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoConsulta" EntityType="Self.TipoConsulta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transaccion" EntityType="Self.Transaccion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AntecedentesPatologicos_Paciente" Association="Self.FK_AntecedentesPatologicos_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="AntecedentesPatologicos" EntitySet="AntecedentesPatologicos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Canton_Provincia" Association="Self.FK_Canton_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Canton" EntitySet="Canton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Medicamento" Association="Self.FK_Compra_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Proveedor" Association="Self.FK_Compra_Proveedor">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_HistoriaClinica" Association="Self.FK_Consulta_HistoriaClinica">
+            <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_SignosVitales" Association="Self.FK_Consulta_SignosVitales">
+            <End Role="SignosVitales" EntitySet="SignosVitales" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_TipoConsulta" Association="Self.FK_Consulta_TipoConsulta">
+            <End Role="TipoConsulta" EntitySet="TipoConsulta" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultaEstudioLaboratorio_Consulta" Association="Self.FK_ConsultaEstudioLaboratorio_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultaEstudioLaboratorio_EstudioLaboratorio" Association="Self.FK_ConsultaEstudioLaboratorio_EstudioLaboratorio">
+            <End Role="EstudioLaboratorio" EntitySet="EstudioLaboratorio" />
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleVenta_Medicamento" Association="Self.FK_DetalleVenta_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleVenta_Venta" Association="Self.FK_DetalleVenta_Venta">
+            <End Role="Venta" EntitySet="Venta" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Establecimiento_Parroquia" Association="Self.FK_Establecimiento_Parroquia">
+            <End Role="Parroquia" EntitySet="Parroquia" />
+            <End Role="Establecimiento" EntitySet="Establecimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstudioLaboratorio_CategoriaEstudioLaboratorio" Association="Self.FK_EstudioLaboratorio_CategoriaEstudioLaboratorio">
+            <End Role="CategoriaEstudioLaboratorio" EntitySet="CategoriaEstudioLaboratorio" />
+            <End Role="EstudioLaboratorio" EntitySet="EstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmacia_Establecimiento" Association="Self.FK_Farmacia_Establecimiento">
+            <End Role="Establecimiento" EntitySet="Establecimiento" />
+            <End Role="Farmacia" EntitySet="Farmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ginecologia_Consulta" Association="Self.FK_Ginecologia_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Ginecologia" EntitySet="Ginecologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoriaClinica_Paciente" Association="Self.FK_HistoriaClinica_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE" Association="Self.FK_Hospitalizacion_CodigoCIE">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE1" Association="Self.FK_Hospitalizacion_CodigoCIE1">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE2" Association="Self.FK_Hospitalizacion_CodigoCIE2">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CondicionEgreso" Association="Self.FK_Hospitalizacion_CondicionEgreso">
+            <End Role="CondicionEgreso" EntitySet="CondicionEgreso" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_EspecialidadEgreso" Association="Self.FK_Hospitalizacion_EspecialidadEgreso">
+            <End Role="EspecialidadEgreso" EntitySet="EspecialidadEgreso" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_Paciente" Association="Self.FK_Hospitalizacion_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LinkArchivo_Entidad" Association="Self.FK_LinkArchivo_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="LinkArchivo" EntitySet="LinkArchivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicamento_CategoriaMedicamento" Association="Self.FK_Medicamento_CategoriaMedicamento">
+            <End Role="CategoriaMedicamento" EntitySet="CategoriaMedicamento" />
+            <End Role="Medicamento" EntitySet="Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicamento_Farmacia" Association="Self.FK_Medicamento_Farmacia">
+            <End Role="Farmacia" EntitySet="Farmacia" />
+            <End Role="Medicamento" EntitySet="Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicamentoHospitalizacion_Hospitalizacion" Association="Self.FK_MedicamentoHospitalizacion_Hospitalizacion">
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+            <End Role="MedicamentoHospitalizacion" EntitySet="MedicamentoHospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicamentoHospitalizacion_Medicamento" Association="Self.FK_MedicamentoHospitalizacion_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="MedicamentoHospitalizacion" EntitySet="MedicamentoHospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Obstetricia_Paciente" Association="Self.FK_Obstetricia_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Obstetricia" EntitySet="Obstetricia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odontologia_Consulta" Association="Self.FK_Odontologia_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Odontologia" EntitySet="Odontologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_Parroquia" Association="Self.FK_Paciente_Parroquia">
+            <End Role="Parroquia" EntitySet="Parroquia" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_TipoDocumento" Association="Self.FK_Paciente_TipoDocumento">
+            <End Role="TipoDocumento" EntitySet="TipoDocumento" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pais_Continente" Association="Self.FK_Pais_Continente">
+            <End Role="Continente" EntitySet="Continente" />
+            <End Role="Pais" EntitySet="Pais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parroquia_Canton" Association="Self.FK_Parroquia_Canton">
+            <End Role="Canton" EntitySet="Canton" />
+            <End Role="Parroquia" EntitySet="Parroquia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Path_Menu" Association="Self.FK_Path_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Path" EntitySet="Path" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Path_subMenu" Association="Self.FK_Path_subMenu">
+            <End Role="subMenu" EntitySet="subMenu" />
+            <End Role="Path" EntitySet="Path" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pediatria_Consulta" Association="Self.FK_Pediatria_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Pediatria" EntitySet="Pediatria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermisoPerfil_AspNetRoles" Association="Self.FK_PermisoPerfil_AspNetRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="PermisoPerfil" EntitySet="PermisoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermisoPerfil_Path" Association="Self.FK_PermisoPerfil_Path">
+            <End Role="Path" EntitySet="Path" />
+            <End Role="PermisoPerfil" EntitySet="PermisoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Precio_Medicamento" Association="Self.FK_Precio_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Precio" EntitySet="Precio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provincia_Pais" Association="Self.FK_Provincia_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Provincia" EntitySet="Provincia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receta_Consulta" Association="Self.FK_Receta_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Receta" EntitySet="Receta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio" Association="Self.FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio">
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+            <End Role="ResultadoEstudioLaboratorio" EntitySet="ResultadoEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaccion_Entidad" Association="Self.FK_Transaccion_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Transaccion" EntitySet="Transaccion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMHospitalDelDiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AntecedentesPatologicos">
+          <Key>
+            <PropertyRef Name="idAntecedentes" />
+          </Key>
+          <Property Name="idAntecedentes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" />
+          <Property Name="AntecedentesPersonales" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AntecedentesFamiliares" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_AntecedentesPatologicos_Paciente" FromRole="AntecedentesPatologicos" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Canton">
+          <Key>
+            <PropertyRef Name="idCanton" />
+          </Key>
+          <Property Name="idCanton" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProvincia" Type="Int32" />
+          <Property Name="canton1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Canton_Provincia" FromRole="Canton" ToRole="Provincia" />
+          <NavigationProperty Name="Parroquia" Relationship="Self.FK_Parroquia_Canton" FromRole="Canton" ToRole="Parroquia" />
+        </EntityType>
+        <EntityType Name="CategoriaEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+          </Key>
+          <Property Name="idCategoriaEstudioLaboratorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoriaEstudioLaboratorio1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="EstudioLaboratorio" Relationship="Self.FK_EstudioLaboratorio_CategoriaEstudioLaboratorio" FromRole="CategoriaEstudioLaboratorio" ToRole="EstudioLaboratorio" />
+        </EntityType>
+        <EntityType Name="CategoriaMedicamento">
+          <Key>
+            <PropertyRef Name="idCategoriaMedicamento" />
+          </Key>
+          <Property Name="idCategoriaMedicamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="categoriaMedicamento1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_Medicamento_CategoriaMedicamento" FromRole="CategoriaMedicamento" ToRole="Medicamento" />
+        </EntityType>
+        <EntityType Name="CodigoCIE">
+          <Key>
+            <PropertyRef Name="idCodigoCie" />
+          </Key>
+          <Property Name="idCodigoCie" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="codigoCIE1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Hospitalizacion" Relationship="Self.FK_Hospitalizacion_CodigoCIE" FromRole="CodigoCIE" ToRole="Hospitalizacion" />
+          <NavigationProperty Name="Hospitalizacion1" Relationship="Self.FK_Hospitalizacion_CodigoCIE1" FromRole="CodigoCIE" ToRole="Hospitalizacion" />
+          <NavigationProperty Name="Hospitalizacion2" Relationship="Self.FK_Hospitalizacion_CodigoCIE2" FromRole="CodigoCIE" ToRole="Hospitalizacion" />
+        </EntityType>
+        <EntityType Name="Compra">
+          <Key>
+            <PropertyRef Name="idCompra" />
+          </Key>
+          <Property Name="idCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idProveedor" Type="Int32" />
+          <Property Name="idMedicamento" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="grabaIVA" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="nroFactura" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="precioUnitario" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="iva" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_Compra_Medicamento" FromRole="Compra" ToRole="Medicamento" />
+          <NavigationProperty Name="Proveedor" Relationship="Self.FK_Compra_Proveedor" FromRole="Compra" ToRole="Proveedor" />
+        </EntityType>
+        <EntityType Name="CondicionEgreso">
+          <Key>
+            <PropertyRef Name="idCondicionEgreso" />
+          </Key>
+          <Property Name="idCondicionEgreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="condicionEgreso1" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="codigoCondicion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Hospitalizacion" Relationship="Self.FK_Hospitalizacion_CondicionEgreso" FromRole="CondicionEgreso" ToRole="Hospitalizacion" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="idConsulta" />
+          </Key>
+          <Property Name="idConsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTipoConsulta" Type="Int32" />
+          <Property Name="idSignosVitales" Type="Int32" />
+          <Property Name="idHistoriaClinica" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="sintomas" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="diagnostico" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prescripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fum" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="HistoriaClinica" Relationship="Self.FK_Consulta_HistoriaClinica" FromRole="Consulta" ToRole="HistoriaClinica" />
+          <NavigationProperty Name="SignosVitales" Relationship="Self.FK_Consulta_SignosVitales" FromRole="Consulta" ToRole="SignosVitales" />
+          <NavigationProperty Name="TipoConsulta" Relationship="Self.FK_Consulta_TipoConsulta" FromRole="Consulta" ToRole="TipoConsulta" />
+          <NavigationProperty Name="ConsultaEstudioLaboratorio" Relationship="Self.FK_ConsultaEstudioLaboratorio_Consulta" FromRole="Consulta" ToRole="ConsultaEstudioLaboratorio" />
+          <NavigationProperty Name="Ginecologia" Relationship="Self.FK_Ginecologia_Consulta" FromRole="Consulta" ToRole="Ginecologia" />
+          <NavigationProperty Name="Odontologia" Relationship="Self.FK_Odontologia_Consulta" FromRole="Consulta" ToRole="Odontologia" />
+          <NavigationProperty Name="Pediatria" Relationship="Self.FK_Pediatria_Consulta" FromRole="Consulta" ToRole="Pediatria" />
+          <NavigationProperty Name="Receta" Relationship="Self.FK_Receta_Consulta" FromRole="Consulta" ToRole="Receta" />
+        </EntityType>
+        <EntityType Name="ConsultaEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idConsultaEstudioLaboratorio" />
+          </Key>
+          <Property Name="idConsultaEstudioLaboratorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <Property Name="idEstudioLaboratorio" Type="Int32" />
+          <Property Name="observacion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_ConsultaEstudioLaboratorio_Consulta" FromRole="ConsultaEstudioLaboratorio" ToRole="Consulta" />
+          <NavigationProperty Name="EstudioLaboratorio" Relationship="Self.FK_ConsultaEstudioLaboratorio_EstudioLaboratorio" FromRole="ConsultaEstudioLaboratorio" ToRole="EstudioLaboratorio" />
+          <NavigationProperty Name="ResultadoEstudioLaboratorio" Relationship="Self.FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio" FromRole="ConsultaEstudioLaboratorio" ToRole="ResultadoEstudioLaboratorio" />
+        </EntityType>
+        <EntityType Name="Continente">
+          <Key>
+            <PropertyRef Name="idContinente" />
+          </Key>
+          <Property Name="idContinente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="continente1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Pais" Relationship="Self.FK_Pais_Continente" FromRole="Continente" ToRole="Pais" />
+        </EntityType>
+        <EntityType Name="DetalleVenta">
+          <Key>
+            <PropertyRef Name="idDetalleVenta" />
+          </Key>
+          <Property Name="idDetalleVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMedicamento" Type="Int32" />
+          <Property Name="idVenta" Type="Int32" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_DetalleVenta_Medicamento" FromRole="DetalleVenta" ToRole="Medicamento" />
+          <NavigationProperty Name="Venta" Relationship="Self.FK_DetalleVenta_Venta" FromRole="DetalleVenta" ToRole="Venta" />
+        </EntityType>
+        <EntityType Name="Entidad">
+          <Key>
+            <PropertyRef Name="idEntidad" />
+          </Key>
+          <Property Name="idEntidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="entidad1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="activo" Type="Boolean" />
+          <NavigationProperty Name="LinkArchivo" Relationship="Self.FK_LinkArchivo_Entidad" FromRole="Entidad" ToRole="LinkArchivo" />
+          <NavigationProperty Name="Transaccion" Relationship="Self.FK_Transaccion_Entidad" FromRole="Entidad" ToRole="Transaccion" />
+        </EntityType>
+        <EntityType Name="EspecialidadEgreso">
+          <Key>
+            <PropertyRef Name="idEspecialidadEgreso" />
+          </Key>
+          <Property Name="idEspecialidadEgreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="especialidadEgreso1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="codigoEspecialidad" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Hospitalizacion" Relationship="Self.FK_Hospitalizacion_EspecialidadEgreso" FromRole="EspecialidadEgreso" ToRole="Hospitalizacion" />
+        </EntityType>
+        <EntityType Name="EspecialidadProfesional">
+          <Key>
+            <PropertyRef Name="idEspecialidadProfesional" />
+          </Key>
+          <Property Name="idEspecialidadProfesional" Type="Int32" Nullable="false" />
+          <Property Name="especialidadProfesional1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Establecimiento">
+          <Key>
+            <PropertyRef Name="idEstablecimiento" />
+          </Key>
+          <Property Name="idEstablecimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idParroquia" Type="Int32" />
+          <Property Name="nombre" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="representanteLegal" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="cedulaRepresentanteLegal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="redDeAtencion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="zona" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="permisoDeFuncionamiento" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="registroUnico" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="logoUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Parroquia" Relationship="Self.FK_Establecimiento_Parroquia" FromRole="Establecimiento" ToRole="Parroquia" />
+          <NavigationProperty Name="Farmacia" Relationship="Self.FK_Farmacia_Establecimiento" FromRole="Establecimiento" ToRole="Farmacia" />
+        </EntityType>
+        <EntityType Name="EstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idEstudioLaboratorio" />
+          </Key>
+          <Property Name="idEstudioLaboratorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCategoriaEstudioLaboratorio" Type="Int32" />
+          <Property Name="estudioLaboratorio1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CategoriaEstudioLaboratorio" Relationship="Self.FK_EstudioLaboratorio_CategoriaEstudioLaboratorio" FromRole="EstudioLaboratorio" ToRole="CategoriaEstudioLaboratorio" />
+          <NavigationProperty Name="ConsultaEstudioLaboratorio" Relationship="Self.FK_ConsultaEstudioLaboratorio_EstudioLaboratorio" FromRole="EstudioLaboratorio" ToRole="ConsultaEstudioLaboratorio" />
+        </EntityType>
+        <EntityType Name="Farmacia">
+          <Key>
+            <PropertyRef Name="idFarmacia" />
+          </Key>
+          <Property Name="idFarmacia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEstablecimiento" Type="Int32" />
+          <Property Name="farmacia1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="numero" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="extension" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="representante" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="cedulaRepresentante" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="celularRepresentante" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="tipoFarmacia" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Establecimiento" Relationship="Self.FK_Farmacia_Establecimiento" FromRole="Farmacia" ToRole="Establecimiento" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_Medicamento_Farmacia" FromRole="Farmacia" ToRole="Medicamento" />
+        </EntityType>
+        <EntityType Name="Ginecologia">
+          <Key>
+            <PropertyRef Name="idGinecologia" />
+          </Key>
+          <Property Name="idGinecologia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Ginecologia_Consulta" FromRole="Ginecologia" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="HistoriaClinica">
+          <Key>
+            <PropertyRef Name="idHiistoriaClinica" />
+          </Key>
+          <Property Name="idHiistoriaClinica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" />
+          <Property Name="nroHistoriaClinica" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Consulta_HistoriaClinica" FromRole="HistoriaClinica" ToRole="Consulta" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_HistoriaClinica_Paciente" FromRole="HistoriaClinica" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Hospitalizacion">
+          <Key>
+            <PropertyRef Name="idHospitalizacion" />
+          </Key>
+          <Property Name="idHospitalizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" />
+          <Property Name="idCondicionEgreso" Type="Int32" />
+          <Property Name="idEspecialidadEgreso" Type="Int32" />
+          <Property Name="fechaIngreso" Type="DateTime" Precision="0" />
+          <Property Name="fechaEgreso" Type="DateTime" Precision="0" />
+          <Property Name="horaIngreso" Type="Time" Precision="7" />
+          <Property Name="afeccionPrincipal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="otrasAfecciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="otrasAfecciones2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="causaExterna" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idCodigoCIEAfeccionPrincipal" Type="Int32" />
+          <Property Name="idCodigoCIEAfeccionSecundaria" Type="Int32" />
+          <Property Name="idCodigoCIECausaExterna" Type="Int32" />
+          <Property Name="alta" Type="Boolean" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CodigoCIE" Relationship="Self.FK_Hospitalizacion_CodigoCIE" FromRole="Hospitalizacion" ToRole="CodigoCIE" />
+          <NavigationProperty Name="CodigoCIE1" Relationship="Self.FK_Hospitalizacion_CodigoCIE1" FromRole="Hospitalizacion" ToRole="CodigoCIE" />
+          <NavigationProperty Name="CodigoCIE2" Relationship="Self.FK_Hospitalizacion_CodigoCIE2" FromRole="Hospitalizacion" ToRole="CodigoCIE" />
+          <NavigationProperty Name="CondicionEgreso" Relationship="Self.FK_Hospitalizacion_CondicionEgreso" FromRole="Hospitalizacion" ToRole="CondicionEgreso" />
+          <NavigationProperty Name="EspecialidadEgreso" Relationship="Self.FK_Hospitalizacion_EspecialidadEgreso" FromRole="Hospitalizacion" ToRole="EspecialidadEgreso" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_Hospitalizacion_Paciente" FromRole="Hospitalizacion" ToRole="Paciente" />
+          <NavigationProperty Name="MedicamentoHospitalizacion" Relationship="Self.FK_MedicamentoHospitalizacion_Hospitalizacion" FromRole="Hospitalizacion" ToRole="MedicamentoHospitalizacion" />
+        </EntityType>
+        <EntityType Name="LinkArchivo">
+          <Key>
+            <PropertyRef Name="idLinkArchivo" />
+          </Key>
+          <Property Name="idLinkArchivo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idEntidad" Type="Int32" />
+          <Property Name="idItem" Type="Int32" />
+          <Property Name="nombreArchivo" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="tipoArchivo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="textoEnlace" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Entidad" Relationship="Self.FK_LinkArchivo_Entidad" FromRole="LinkArchivo" ToRole="Entidad" />
+        </EntityType>
+        <EntityType Name="Medicamento">
+          <Key>
+            <PropertyRef Name="idMedicamento" />
+          </Key>
+          <Property Name="idMedicamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFarmacia" Type="Int32" />
+          <Property Name="idCategoriaMedicamento" Type="Int32" />
+          <Property Name="nombreComercial" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="nombreGenerico" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ingresado" Type="Boolean" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="CategoriaMedicamento" Relationship="Self.FK_Medicamento_CategoriaMedicamento" FromRole="Medicamento" ToRole="CategoriaMedicamento" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Medicamento" FromRole="Medicamento" ToRole="Compra" />
+          <NavigationProperty Name="DetalleVenta" Relationship="Self.FK_DetalleVenta_Medicamento" FromRole="Medicamento" ToRole="DetalleVenta" />
+          <NavigationProperty Name="Farmacia" Relationship="Self.FK_Medicamento_Farmacia" FromRole="Medicamento" ToRole="Farmacia" />
+          <NavigationProperty Name="MedicamentoHospitalizacion" Relationship="Self.FK_MedicamentoHospitalizacion_Medicamento" FromRole="Medicamento" ToRole="MedicamentoHospitalizacion" />
+          <NavigationProperty Name="Precio" Relationship="Self.FK_Precio_Medicamento" FromRole="Medicamento" ToRole="Precio" />
+        </EntityType>
+        <EntityType Name="MedicamentoHospitalizacion">
+          <Key>
+            <PropertyRef Name="idMedicamentoHospitalizacion" />
+          </Key>
+          <Property Name="idMedicamentoHospitalizacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMedicamento" Type="Int32" />
+          <Property Name="idHospitalizacion" Type="Int32" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="hora" Type="Time" Precision="7" />
+          <Property Name="notasDeEvolucion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="prescripcionMedica" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Hospitalizacion" Relationship="Self.FK_MedicamentoHospitalizacion_Hospitalizacion" FromRole="MedicamentoHospitalizacion" ToRole="Hospitalizacion" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_MedicamentoHospitalizacion_Medicamento" FromRole="MedicamentoHospitalizacion" ToRole="Medicamento" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="idMenu" />
+          </Key>
+          <Property Name="idMenu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menu1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Path" Relationship="Self.FK_Path_Menu" FromRole="Menu" ToRole="Path" />
+        </EntityType>
+        <EntityType Name="Obstetricia">
+          <Key>
+            <PropertyRef Name="idObstetricia" />
+          </Key>
+          <Property Name="idObstetricia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPaciente" Type="Int32" />
+          <Property Name="fecPrimerParto" Type="DateTime" Precision="0" />
+          <Property Name="gestas" Type="Int32" />
+          <Property Name="partos" Type="Int32" />
+          <Property Name="cesareas" Type="Int32" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_Obstetricia_Paciente" FromRole="Obstetricia" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Odontologia">
+          <Key>
+            <PropertyRef Name="idOdontologia" />
+          </Key>
+          <Property Name="idOdontologia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Odontologia_Consulta" FromRole="Odontologia" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="idPaciente" />
+          </Key>
+          <Property Name="idPaciente" Type="Int32" Nullable="false" />
+          <Property Name="idParroquia" Type="Int32" />
+          <Property Name="idTipoDocumento" Type="Int32" />
+          <Property Name="nombres" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="apellidos" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="celular" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="telefono" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="genero" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="fecNacimiento" Type="DateTime" Precision="0" />
+          <Property Name="etnia" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="estadoCivil" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="nacionalidad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="paisNacimiento" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="discapacidad" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="AntecedentesPatologicos" Relationship="Self.FK_AntecedentesPatologicos_Paciente" FromRole="Paciente" ToRole="AntecedentesPatologicos" />
+          <NavigationProperty Name="HistoriaClinica" Relationship="Self.FK_HistoriaClinica_Paciente" FromRole="Paciente" ToRole="HistoriaClinica" />
+          <NavigationProperty Name="Hospitalizacion" Relationship="Self.FK_Hospitalizacion_Paciente" FromRole="Paciente" ToRole="Hospitalizacion" />
+          <NavigationProperty Name="Obstetricia" Relationship="Self.FK_Obstetricia_Paciente" FromRole="Paciente" ToRole="Obstetricia" />
+          <NavigationProperty Name="Parroquia" Relationship="Self.FK_Paciente_Parroquia" FromRole="Paciente" ToRole="Parroquia" />
+          <NavigationProperty Name="TipoDocumento" Relationship="Self.FK_Paciente_TipoDocumento" FromRole="Paciente" ToRole="TipoDocumento" />
+        </EntityType>
+        <EntityType Name="Pais">
+          <Key>
+            <PropertyRef Name="idPais" />
+          </Key>
+          <Property Name="idPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idContinente" Type="Int32" />
+          <Property Name="pais1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Continente" Relationship="Self.FK_Pais_Continente" FromRole="Pais" ToRole="Continente" />
+          <NavigationProperty Name="Provincia" Relationship="Self.FK_Provincia_Pais" FromRole="Pais" ToRole="Provincia" />
+        </EntityType>
+        <EntityType Name="Parroquia">
+          <Key>
+            <PropertyRef Name="idParroquia" />
+          </Key>
+          <Property Name="idParroquia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idCanton" Type="Int32" />
+          <Property Name="parroquia1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Canton" Relationship="Self.FK_Parroquia_Canton" FromRole="Parroquia" ToRole="Canton" />
+          <NavigationProperty Name="Establecimiento" Relationship="Self.FK_Establecimiento_Parroquia" FromRole="Parroquia" ToRole="Establecimiento" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_Paciente_Parroquia" FromRole="Parroquia" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Path">
+          <Key>
+            <PropertyRef Name="idPath" />
+          </Key>
+          <Property Name="idPath" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMenu" Type="Int32" />
+          <Property Name="idSubMenu" Type="Int32" />
+          <Property Name="url" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="icono" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Menu" Relationship="Self.FK_Path_Menu" FromRole="Path" ToRole="Menu" />
+          <NavigationProperty Name="subMenu" Relationship="Self.FK_Path_subMenu" FromRole="Path" ToRole="subMenu" />
+          <NavigationProperty Name="PermisoPerfil" Relationship="Self.FK_PermisoPerfil_Path" FromRole="Path" ToRole="PermisoPerfil" />
+        </EntityType>
+        <EntityType Name="Pediatria">
+          <Key>
+            <PropertyRef Name="idPediatria" />
+          </Key>
+          <Property Name="idPediatria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Pediatria_Consulta" FromRole="Pediatria" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="PermisoPerfil">
+          <Key>
+            <PropertyRef Name="idPermisoPerfil" />
+          </Key>
+          <Property Name="idPermisoPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPath" Type="Int32" />
+          <Property Name="idRol" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="selecciona" Type="Boolean" />
+          <Property Name="inserta" Type="Boolean" />
+          <Property Name="actualiza" Type="Boolean" />
+          <Property Name="elimina" Type="Boolean" />
+          <Property Name="mostrarEnMenu" Type="Boolean" />
+          <NavigationProperty Name="Path" Relationship="Self.FK_PermisoPerfil_Path" FromRole="PermisoPerfil" ToRole="Path" />
+          <Property Name="borrado" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="AspNetRoles" Relationship="SMHospitalDelDiaModel.FK_PermisoPerfil_AspNetRoles" FromRole="PermisoPerfil" ToRole="AspNetRoles" />
+        </EntityType>
+        <EntityType Name="Precio">
+          <Key>
+            <PropertyRef Name="idPrecio" />
+          </Key>
+          <Property Name="idPrecio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idMedicamento" Type="Int32" />
+          <Property Name="fechaInicio" Type="DateTime" Precision="0" />
+          <Property Name="fechaFin" Type="DateTime" Precision="0" />
+          <Property Name="precio1" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="grabaIVA" Type="Boolean" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.FK_Precio_Medicamento" FromRole="Precio" ToRole="Medicamento" />
+        </EntityType>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="idProveedor" />
+          </Key>
+          <Property Name="idProveedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="razonSocial" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ruc" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="contacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefonoContacto" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Compra" Relationship="Self.FK_Compra_Proveedor" FromRole="Proveedor" ToRole="Compra" />
+        </EntityType>
+        <EntityType Name="Provincia">
+          <Key>
+            <PropertyRef Name="idProvincia" />
+          </Key>
+          <Property Name="idProvincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idPais" Type="Int32" />
+          <Property Name="provincia1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Canton" Relationship="Self.FK_Canton_Provincia" FromRole="Provincia" ToRole="Canton" />
+          <NavigationProperty Name="Pais" Relationship="Self.FK_Provincia_Pais" FromRole="Provincia" ToRole="Pais" />
+        </EntityType>
+        <EntityType Name="Receta">
+          <Key>
+            <PropertyRef Name="idReceta" />
+          </Key>
+          <Property Name="idReceta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsulta" Type="Int32" />
+          <Property Name="receta1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dosis" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Receta_Consulta" FromRole="Receta" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="ResultadoEstudioLaboratorio">
+          <Key>
+            <PropertyRef Name="idResultadoEstudioLaboratorio" />
+          </Key>
+          <Property Name="idResultadoEstudioLaboratorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idConsultaEstudioLaboratorio" Type="Int32" />
+          <Property Name="resultadoEstudioLaboratorio1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ConsultaEstudioLaboratorio" Relationship="Self.FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio" FromRole="ResultadoEstudioLaboratorio" ToRole="ConsultaEstudioLaboratorio" />
+        </EntityType>
+        <EntityType Name="SignosVitales">
+          <Key>
+            <PropertyRef Name="idSignosVitales" />
+          </Key>
+          <Property Name="idSignosVitales" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="peso" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="talla" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="temperatura" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="frecuenciaCardiaca" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="presionArterial" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Consulta_SignosVitales" FromRole="SignosVitales" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="subMenu">
+          <Key>
+            <PropertyRef Name="idSubMenu" />
+          </Key>
+          <Property Name="idSubMenu" Type="Int32" Nullable="false" />
+          <Property Name="submenu1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Path" Relationship="Self.FK_Path_subMenu" FromRole="subMenu" ToRole="Path" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TipoConsulta">
+          <Key>
+            <PropertyRef Name="idTipoConsulta" />
+          </Key>
+          <Property Name="idTipoConsulta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoConsulta1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Consulta" Relationship="Self.FK_Consulta_TipoConsulta" FromRole="TipoConsulta" ToRole="Consulta" />
+        </EntityType>
+        <EntityType Name="TipoDocumento">
+          <Key>
+            <PropertyRef Name="idTipoDocumento" />
+          </Key>
+          <Property Name="idTipoDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipoDocumento1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Paciente" Relationship="Self.FK_Paciente_TipoDocumento" FromRole="TipoDocumento" ToRole="Paciente" />
+        </EntityType>
+        <EntityType Name="Transaccion">
+          <Key>
+            <PropertyRef Name="idTransaccion" />
+          </Key>
+          <Property Name="idTransaccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tipo" Type="Int32" />
+          <Property Name="usuario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="idEntidad" Type="Int32" />
+          <Property Name="idItem" Type="Int32" />
+          <NavigationProperty Name="Entidad" Relationship="Self.FK_Transaccion_Entidad" FromRole="Transaccion" ToRole="Entidad" />
+        </EntityType>
+        <EntityType Name="Venta">
+          <Key>
+            <PropertyRef Name="idVenta" />
+          </Key>
+          <Property Name="idVenta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="cliente" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="documento" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
+          <Property Name="subtotal12" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="subtotal0" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="iva" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ice" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="total" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="borrado" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="DetalleVenta" Relationship="Self.FK_DetalleVenta_Venta" FromRole="Venta" ToRole="DetalleVenta" />
+        </EntityType>
+        <Association Name="FK_AntecedentesPatologicos_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="AntecedentesPatologicos" Type="Self.AntecedentesPatologicos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="AntecedentesPatologicos">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Canton_Provincia">
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="0..1" />
+          <End Role="Canton" Type="Self.Canton" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Provincia">
+              <PropertyRef Name="idProvincia" />
+            </Principal>
+            <Dependent Role="Canton">
+              <PropertyRef Name="idProvincia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parroquia_Canton">
+          <End Role="Canton" Type="Self.Canton" Multiplicity="0..1" />
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Canton">
+              <PropertyRef Name="idCanton" />
+            </Principal>
+            <Dependent Role="Parroquia">
+              <PropertyRef Name="idCanton" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EstudioLaboratorio_CategoriaEstudioLaboratorio">
+          <End Role="CategoriaEstudioLaboratorio" Type="Self.CategoriaEstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="EstudioLaboratorio" Type="Self.EstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaEstudioLaboratorio">
+              <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="EstudioLaboratorio">
+              <PropertyRef Name="idCategoriaEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicamento_CategoriaMedicamento">
+          <End Role="CategoriaMedicamento" Type="Self.CategoriaMedicamento" Multiplicity="0..1" />
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaMedicamento">
+              <PropertyRef Name="idCategoriaMedicamento" />
+            </Principal>
+            <Dependent Role="Medicamento">
+              <PropertyRef Name="idCategoriaMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIEAfeccionPrincipal" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE1">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIEAfeccionSecundaria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CodigoCIE2">
+          <End Role="CodigoCIE" Type="Self.CodigoCIE" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoCIE">
+              <PropertyRef Name="idCodigoCie" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCodigoCIECausaExterna" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Compra_Proveedor">
+          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="idProveedor" />
+            </Principal>
+            <Dependent Role="Compra">
+              <PropertyRef Name="idProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_CondicionEgreso">
+          <End Role="CondicionEgreso" Type="Self.CondicionEgreso" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CondicionEgreso">
+              <PropertyRef Name="idCondicionEgreso" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idCondicionEgreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_HistoriaClinica">
+          <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="HistoriaClinica">
+              <PropertyRef Name="idHiistoriaClinica" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idHistoriaClinica" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_SignosVitales">
+          <End Role="SignosVitales" Type="Self.SignosVitales" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SignosVitales">
+              <PropertyRef Name="idSignosVitales" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idSignosVitales" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Consulta_TipoConsulta">
+          <End Role="TipoConsulta" Type="Self.TipoConsulta" Multiplicity="0..1" />
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoConsulta">
+              <PropertyRef Name="idTipoConsulta" />
+            </Principal>
+            <Dependent Role="Consulta">
+              <PropertyRef Name="idTipoConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultaEstudioLaboratorio_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ginecologia_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Ginecologia" Type="Self.Ginecologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Ginecologia">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Odontologia_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Odontologia" Type="Self.Odontologia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Odontologia">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pediatria_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Pediatria" Type="Self.Pediatria" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Pediatria">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Receta_Consulta">
+          <End Role="Consulta" Type="Self.Consulta" Multiplicity="0..1" />
+          <End Role="Receta" Type="Self.Receta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consulta">
+              <PropertyRef Name="idConsulta" />
+            </Principal>
+            <Dependent Role="Receta">
+              <PropertyRef Name="idConsulta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ConsultaEstudioLaboratorio_EstudioLaboratorio">
+          <End Role="EstudioLaboratorio" Type="Self.EstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstudioLaboratorio">
+              <PropertyRef Name="idEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio">
+          <End Role="ConsultaEstudioLaboratorio" Type="Self.ConsultaEstudioLaboratorio" Multiplicity="0..1" />
+          <End Role="ResultadoEstudioLaboratorio" Type="Self.ResultadoEstudioLaboratorio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ConsultaEstudioLaboratorio">
+              <PropertyRef Name="idConsultaEstudioLaboratorio" />
+            </Principal>
+            <Dependent Role="ResultadoEstudioLaboratorio">
+              <PropertyRef Name="idConsultaEstudioLaboratorio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pais_Continente">
+          <End Role="Continente" Type="Self.Continente" Multiplicity="0..1" />
+          <End Role="Pais" Type="Self.Pais" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Continente">
+              <PropertyRef Name="idContinente" />
+            </Principal>
+            <Dependent Role="Pais">
+              <PropertyRef Name="idContinente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleVenta_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DetalleVenta_Venta">
+          <End Role="Venta" Type="Self.Venta" Multiplicity="0..1" />
+          <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Venta">
+              <PropertyRef Name="idVenta" />
+            </Principal>
+            <Dependent Role="DetalleVenta">
+              <PropertyRef Name="idVenta" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LinkArchivo_Entidad">
+          <End Role="Entidad" Type="Self.Entidad" Multiplicity="0..1" />
+          <End Role="LinkArchivo" Type="Self.LinkArchivo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="idEntidad" />
+            </Principal>
+            <Dependent Role="LinkArchivo">
+              <PropertyRef Name="idEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Transaccion_Entidad">
+          <End Role="Entidad" Type="Self.Entidad" Multiplicity="0..1" />
+          <End Role="Transaccion" Type="Self.Transaccion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Entidad">
+              <PropertyRef Name="idEntidad" />
+            </Principal>
+            <Dependent Role="Transaccion">
+              <PropertyRef Name="idEntidad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_EspecialidadEgreso">
+          <End Role="EspecialidadEgreso" Type="Self.EspecialidadEgreso" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EspecialidadEgreso">
+              <PropertyRef Name="idEspecialidadEgreso" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idEspecialidadEgreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Establecimiento_Parroquia">
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="0..1" />
+          <End Role="Establecimiento" Type="Self.Establecimiento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parroquia">
+              <PropertyRef Name="idParroquia" />
+            </Principal>
+            <Dependent Role="Establecimiento">
+              <PropertyRef Name="idParroquia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Farmacia_Establecimiento">
+          <End Role="Establecimiento" Type="Self.Establecimiento" Multiplicity="0..1" />
+          <End Role="Farmacia" Type="Self.Farmacia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Establecimiento">
+              <PropertyRef Name="idEstablecimiento" />
+            </Principal>
+            <Dependent Role="Farmacia">
+              <PropertyRef Name="idEstablecimiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Medicamento_Farmacia">
+          <End Role="Farmacia" Type="Self.Farmacia" Multiplicity="0..1" />
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Farmacia">
+              <PropertyRef Name="idFarmacia" />
+            </Principal>
+            <Dependent Role="Medicamento">
+              <PropertyRef Name="idFarmacia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HistoriaClinica_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="HistoriaClinica" Type="Self.HistoriaClinica" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="HistoriaClinica">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Hospitalizacion_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Hospitalizacion">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicamentoHospitalizacion_Hospitalizacion">
+          <End Role="Hospitalizacion" Type="Self.Hospitalizacion" Multiplicity="0..1" />
+          <End Role="MedicamentoHospitalizacion" Type="Self.MedicamentoHospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hospitalizacion">
+              <PropertyRef Name="idHospitalizacion" />
+            </Principal>
+            <Dependent Role="MedicamentoHospitalizacion">
+              <PropertyRef Name="idHospitalizacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MedicamentoHospitalizacion_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="MedicamentoHospitalizacion" Type="Self.MedicamentoHospitalizacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="MedicamentoHospitalizacion">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Precio_Medicamento">
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="0..1" />
+          <End Role="Precio" Type="Self.Precio" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medicamento">
+              <PropertyRef Name="idMedicamento" />
+            </Principal>
+            <Dependent Role="Precio">
+              <PropertyRef Name="idMedicamento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Path_Menu">
+          <End Role="Menu" Type="Self.Menu" Multiplicity="0..1" />
+          <End Role="Path" Type="Self.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Menu">
+              <PropertyRef Name="idMenu" />
+            </Principal>
+            <Dependent Role="Path">
+              <PropertyRef Name="idMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Obstetricia_Paciente">
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+          <End Role="Obstetricia" Type="Self.Obstetricia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paciente">
+              <PropertyRef Name="idPaciente" />
+            </Principal>
+            <Dependent Role="Obstetricia">
+              <PropertyRef Name="idPaciente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_Parroquia">
+          <End Role="Parroquia" Type="Self.Parroquia" Multiplicity="0..1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parroquia">
+              <PropertyRef Name="idParroquia" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idParroquia" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Paciente_TipoDocumento">
+          <End Role="TipoDocumento" Type="Self.TipoDocumento" Multiplicity="0..1" />
+          <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoDocumento">
+              <PropertyRef Name="idTipoDocumento" />
+            </Principal>
+            <Dependent Role="Paciente">
+              <PropertyRef Name="idTipoDocumento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Provincia_Pais">
+          <End Role="Pais" Type="Self.Pais" Multiplicity="0..1" />
+          <End Role="Provincia" Type="Self.Provincia" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Provincia">
+              <PropertyRef Name="idPais" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Path_subMenu">
+          <End Role="subMenu" Type="Self.subMenu" Multiplicity="0..1" />
+          <End Role="Path" Type="Self.Path" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subMenu">
+              <PropertyRef Name="idSubMenu" />
+            </Principal>
+            <Dependent Role="Path">
+              <PropertyRef Name="idSubMenu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PermisoPerfil_Path">
+          <End Role="Path" Type="Self.Path" Multiplicity="0..1" />
+          <End Role="PermisoPerfil" Type="Self.PermisoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Path">
+              <PropertyRef Name="idPath" />
+            </Principal>
+            <Dependent Role="PermisoPerfil">
+              <PropertyRef Name="idPath" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SMHospitalDelDiaEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AntecedentesPatologicos" EntityType="Self.AntecedentesPatologicos" />
+          <EntitySet Name="Canton" EntityType="Self.Canton" />
+          <EntitySet Name="CategoriaEstudioLaboratorio" EntityType="Self.CategoriaEstudioLaboratorio" />
+          <EntitySet Name="CategoriaMedicamento" EntityType="Self.CategoriaMedicamento" />
+          <EntitySet Name="CodigoCIE" EntityType="Self.CodigoCIE" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" />
+          <EntitySet Name="CondicionEgreso" EntityType="Self.CondicionEgreso" />
+          <EntitySet Name="Consulta" EntityType="Self.Consulta" />
+          <EntitySet Name="ConsultaEstudioLaboratorio" EntityType="Self.ConsultaEstudioLaboratorio" />
+          <EntitySet Name="Continente" EntityType="Self.Continente" />
+          <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" />
+          <EntitySet Name="Entidad" EntityType="Self.Entidad" />
+          <EntitySet Name="EspecialidadEgreso" EntityType="Self.EspecialidadEgreso" />
+          <EntitySet Name="EspecialidadProfesional" EntityType="Self.EspecialidadProfesional" />
+          <EntitySet Name="Establecimiento" EntityType="Self.Establecimiento" />
+          <EntitySet Name="EstudioLaboratorio" EntityType="Self.EstudioLaboratorio" />
+          <EntitySet Name="Farmacia" EntityType="Self.Farmacia" />
+          <EntitySet Name="Ginecologia" EntityType="Self.Ginecologia" />
+          <EntitySet Name="HistoriaClinica" EntityType="Self.HistoriaClinica" />
+          <EntitySet Name="Hospitalizacion" EntityType="Self.Hospitalizacion" />
+          <EntitySet Name="LinkArchivo" EntityType="Self.LinkArchivo" />
+          <EntitySet Name="Medicamento" EntityType="Self.Medicamento" />
+          <EntitySet Name="MedicamentoHospitalizacion" EntityType="Self.MedicamentoHospitalizacion" />
+          <EntitySet Name="Menu" EntityType="Self.Menu" />
+          <EntitySet Name="Obstetricia" EntityType="Self.Obstetricia" />
+          <EntitySet Name="Odontologia" EntityType="Self.Odontologia" />
+          <EntitySet Name="Paciente" EntityType="Self.Paciente" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" />
+          <EntitySet Name="Parroquia" EntityType="Self.Parroquia" />
+          <EntitySet Name="Path" EntityType="Self.Path" />
+          <EntitySet Name="Pediatria" EntityType="Self.Pediatria" />
+          <EntitySet Name="PermisoPerfil" EntityType="Self.PermisoPerfil" />
+          <EntitySet Name="Precio" EntityType="Self.Precio" />
+          <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
+          <EntitySet Name="Provincia" EntityType="Self.Provincia" />
+          <EntitySet Name="Receta" EntityType="Self.Receta" />
+          <EntitySet Name="ResultadoEstudioLaboratorio" EntityType="Self.ResultadoEstudioLaboratorio" />
+          <EntitySet Name="SignosVitales" EntityType="Self.SignosVitales" />
+          <EntitySet Name="subMenu" EntityType="Self.subMenu" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TipoConsulta" EntityType="Self.TipoConsulta" />
+          <EntitySet Name="TipoDocumento" EntityType="Self.TipoDocumento" />
+          <EntitySet Name="Transaccion" EntityType="Self.Transaccion" />
+          <EntitySet Name="Venta" EntityType="Self.Venta" />
+          <AssociationSet Name="FK_AntecedentesPatologicos_Paciente" Association="Self.FK_AntecedentesPatologicos_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="AntecedentesPatologicos" EntitySet="AntecedentesPatologicos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Canton_Provincia" Association="Self.FK_Canton_Provincia">
+            <End Role="Provincia" EntitySet="Provincia" />
+            <End Role="Canton" EntitySet="Canton" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parroquia_Canton" Association="Self.FK_Parroquia_Canton">
+            <End Role="Canton" EntitySet="Canton" />
+            <End Role="Parroquia" EntitySet="Parroquia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EstudioLaboratorio_CategoriaEstudioLaboratorio" Association="Self.FK_EstudioLaboratorio_CategoriaEstudioLaboratorio">
+            <End Role="CategoriaEstudioLaboratorio" EntitySet="CategoriaEstudioLaboratorio" />
+            <End Role="EstudioLaboratorio" EntitySet="EstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicamento_CategoriaMedicamento" Association="Self.FK_Medicamento_CategoriaMedicamento">
+            <End Role="CategoriaMedicamento" EntitySet="CategoriaMedicamento" />
+            <End Role="Medicamento" EntitySet="Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE" Association="Self.FK_Hospitalizacion_CodigoCIE">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE1" Association="Self.FK_Hospitalizacion_CodigoCIE1">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CodigoCIE2" Association="Self.FK_Hospitalizacion_CodigoCIE2">
+            <End Role="CodigoCIE" EntitySet="CodigoCIE" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Medicamento" Association="Self.FK_Compra_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Proveedor" Association="Self.FK_Compra_Proveedor">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_CondicionEgreso" Association="Self.FK_Hospitalizacion_CondicionEgreso">
+            <End Role="CondicionEgreso" EntitySet="CondicionEgreso" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_HistoriaClinica" Association="Self.FK_Consulta_HistoriaClinica">
+            <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_SignosVitales" Association="Self.FK_Consulta_SignosVitales">
+            <End Role="SignosVitales" EntitySet="SignosVitales" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Consulta_TipoConsulta" Association="Self.FK_Consulta_TipoConsulta">
+            <End Role="TipoConsulta" EntitySet="TipoConsulta" />
+            <End Role="Consulta" EntitySet="Consulta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultaEstudioLaboratorio_Consulta" Association="Self.FK_ConsultaEstudioLaboratorio_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ginecologia_Consulta" Association="Self.FK_Ginecologia_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Ginecologia" EntitySet="Ginecologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Odontologia_Consulta" Association="Self.FK_Odontologia_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Odontologia" EntitySet="Odontologia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pediatria_Consulta" Association="Self.FK_Pediatria_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Pediatria" EntitySet="Pediatria" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Receta_Consulta" Association="Self.FK_Receta_Consulta">
+            <End Role="Consulta" EntitySet="Consulta" />
+            <End Role="Receta" EntitySet="Receta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ConsultaEstudioLaboratorio_EstudioLaboratorio" Association="Self.FK_ConsultaEstudioLaboratorio_EstudioLaboratorio">
+            <End Role="EstudioLaboratorio" EntitySet="EstudioLaboratorio" />
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio" Association="Self.FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio">
+            <End Role="ConsultaEstudioLaboratorio" EntitySet="ConsultaEstudioLaboratorio" />
+            <End Role="ResultadoEstudioLaboratorio" EntitySet="ResultadoEstudioLaboratorio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pais_Continente" Association="Self.FK_Pais_Continente">
+            <End Role="Continente" EntitySet="Continente" />
+            <End Role="Pais" EntitySet="Pais" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleVenta_Medicamento" Association="Self.FK_DetalleVenta_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DetalleVenta_Venta" Association="Self.FK_DetalleVenta_Venta">
+            <End Role="Venta" EntitySet="Venta" />
+            <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LinkArchivo_Entidad" Association="Self.FK_LinkArchivo_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="LinkArchivo" EntitySet="LinkArchivo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Transaccion_Entidad" Association="Self.FK_Transaccion_Entidad">
+            <End Role="Entidad" EntitySet="Entidad" />
+            <End Role="Transaccion" EntitySet="Transaccion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_EspecialidadEgreso" Association="Self.FK_Hospitalizacion_EspecialidadEgreso">
+            <End Role="EspecialidadEgreso" EntitySet="EspecialidadEgreso" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Establecimiento_Parroquia" Association="Self.FK_Establecimiento_Parroquia">
+            <End Role="Parroquia" EntitySet="Parroquia" />
+            <End Role="Establecimiento" EntitySet="Establecimiento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Farmacia_Establecimiento" Association="Self.FK_Farmacia_Establecimiento">
+            <End Role="Establecimiento" EntitySet="Establecimiento" />
+            <End Role="Farmacia" EntitySet="Farmacia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Medicamento_Farmacia" Association="Self.FK_Medicamento_Farmacia">
+            <End Role="Farmacia" EntitySet="Farmacia" />
+            <End Role="Medicamento" EntitySet="Medicamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistoriaClinica_Paciente" Association="Self.FK_HistoriaClinica_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="HistoriaClinica" EntitySet="HistoriaClinica" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Hospitalizacion_Paciente" Association="Self.FK_Hospitalizacion_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicamentoHospitalizacion_Hospitalizacion" Association="Self.FK_MedicamentoHospitalizacion_Hospitalizacion">
+            <End Role="Hospitalizacion" EntitySet="Hospitalizacion" />
+            <End Role="MedicamentoHospitalizacion" EntitySet="MedicamentoHospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MedicamentoHospitalizacion_Medicamento" Association="Self.FK_MedicamentoHospitalizacion_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="MedicamentoHospitalizacion" EntitySet="MedicamentoHospitalizacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Precio_Medicamento" Association="Self.FK_Precio_Medicamento">
+            <End Role="Medicamento" EntitySet="Medicamento" />
+            <End Role="Precio" EntitySet="Precio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Path_Menu" Association="Self.FK_Path_Menu">
+            <End Role="Menu" EntitySet="Menu" />
+            <End Role="Path" EntitySet="Path" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Obstetricia_Paciente" Association="Self.FK_Obstetricia_Paciente">
+            <End Role="Paciente" EntitySet="Paciente" />
+            <End Role="Obstetricia" EntitySet="Obstetricia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_Parroquia" Association="Self.FK_Paciente_Parroquia">
+            <End Role="Parroquia" EntitySet="Parroquia" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Paciente_TipoDocumento" Association="Self.FK_Paciente_TipoDocumento">
+            <End Role="TipoDocumento" EntitySet="TipoDocumento" />
+            <End Role="Paciente" EntitySet="Paciente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Provincia_Pais" Association="Self.FK_Provincia_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Provincia" EntitySet="Provincia" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Path_subMenu" Association="Self.FK_Path_subMenu">
+            <End Role="subMenu" EntitySet="subMenu" />
+            <End Role="Path" EntitySet="Path" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PermisoPerfil_Path" Association="Self.FK_PermisoPerfil_Path">
+            <End Role="Path" EntitySet="Path" />
+            <End Role="PermisoPerfil" EntitySet="PermisoPerfil" />
+          </AssociationSet>
+          <EntitySet Name="AspNetRoles" EntityType="SMHospitalDelDiaModel.AspNetRoles" />
+          <EntitySet Name="AspNetUserClaims" EntityType="SMHospitalDelDiaModel.AspNetUserClaims" />
+          <EntitySet Name="AspNetUserLogins" EntityType="SMHospitalDelDiaModel.AspNetUserLogins" />
+          <EntitySet Name="AspNetUsers" EntityType="SMHospitalDelDiaModel.AspNetUsers" />
+          <AssociationSet Name="FK_PermisoPerfil_AspNetRoles" Association="SMHospitalDelDiaModel.FK_PermisoPerfil_AspNetRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="PermisoPerfil" EntitySet="PermisoPerfil" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="SMHospitalDelDiaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="SMHospitalDelDiaModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+            <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+          </AssociationSet>
+          <AssociationSet Name="AspNetUserRoles" Association="SMHospitalDelDiaModel.AspNetUserRoles">
+            <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+            <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="AspNetRoles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PermisoPerfil" Relationship="SMHospitalDelDiaModel.FK_PermisoPerfil_AspNetRoles" FromRole="AspNetRoles" ToRole="PermisoPerfil" />
+          <NavigationProperty Name="AspNetUsers" Relationship="SMHospitalDelDiaModel.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserClaims">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="SMHospitalDelDiaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUserLogins">
+          <Key>
+            <PropertyRef Name="LoginProvider" />
+            <PropertyRef Name="ProviderKey" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="UserId" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUsers" Relationship="SMHospitalDelDiaModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+        </EntityType>
+        <EntityType Name="AspNetUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="cedula" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Hometown" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="nombres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="apellidos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="direccion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="genero" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fechaNacimiento" Type="DateTime" Precision="3" />
+          <Property Name="titulo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+          <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+          <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="AspNetUserClaims" Relationship="SMHospitalDelDiaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+          <NavigationProperty Name="AspNetUserLogins" Relationship="SMHospitalDelDiaModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+          <NavigationProperty Name="AspNetRoles" Relationship="SMHospitalDelDiaModel.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+        </EntityType>
+        <Association Name="FK_PermisoPerfil_AspNetRoles">
+          <End Type="SMHospitalDelDiaModel.AspNetRoles" Role="AspNetRoles" Multiplicity="1" />
+          <End Type="SMHospitalDelDiaModel.PermisoPerfil" Role="PermisoPerfil" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetRoles">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PermisoPerfil">
+              <PropertyRef Name="idRol" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+          <End Type="SMHospitalDelDiaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SMHospitalDelDiaModel.AspNetUserClaims" Role="AspNetUserClaims" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserClaims">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+          <End Type="SMHospitalDelDiaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SMHospitalDelDiaModel.AspNetUserLogins" Role="AspNetUserLogins" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AspNetUsers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="AspNetUserLogins">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="AspNetUserRoles">
+          <End Type="SMHospitalDelDiaModel.AspNetRoles" Role="AspNetRoles" Multiplicity="*" />
+          <End Type="SMHospitalDelDiaModel.AspNetUsers" Role="AspNetUsers" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMHospitalDelDiaModelStoreContainer" CdmEntityContainer="SMHospitalDelDiaEntities">
+          <EntitySetMapping Name="AntecedentesPatologicos">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AntecedentesPatologicos">
+              <MappingFragment StoreEntitySet="AntecedentesPatologicos">
+                <ScalarProperty Name="idAntecedentes" ColumnName="idAntecedentes" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="AntecedentesPersonales" ColumnName="AntecedentesPersonales" />
+                <ScalarProperty Name="AntecedentesFamiliares" ColumnName="AntecedentesFamiliares" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Canton">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Canton">
+              <MappingFragment StoreEntitySet="Canton">
+                <ScalarProperty Name="idCanton" ColumnName="idCanton" />
+                <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+                <ScalarProperty Name="canton1" ColumnName="canton" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaEstudioLaboratorio">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CategoriaEstudioLaboratorio">
+              <MappingFragment StoreEntitySet="CategoriaEstudioLaboratorio">
+                <ScalarProperty Name="idCategoriaEstudioLaboratorio" ColumnName="idCategoriaEstudioLaboratorio" />
+                <ScalarProperty Name="categoriaEstudioLaboratorio1" ColumnName="categoriaEstudioLaboratorio" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaMedicamento">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CategoriaMedicamento">
+              <MappingFragment StoreEntitySet="CategoriaMedicamento">
+                <ScalarProperty Name="idCategoriaMedicamento" ColumnName="idCategoriaMedicamento" />
+                <ScalarProperty Name="categoriaMedicamento1" ColumnName="categoriaMedicamento" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodigoCIE">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CodigoCIE">
+              <MappingFragment StoreEntitySet="CodigoCIE">
+                <ScalarProperty Name="idCodigoCie" ColumnName="idCodigoCie" />
+                <ScalarProperty Name="codigoCIE1" ColumnName="codigoCIE" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Compra">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Compra">
+              <MappingFragment StoreEntitySet="Compra">
+                <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="grabaIVA" ColumnName="grabaIVA" />
+                <ScalarProperty Name="nroFactura" ColumnName="nroFactura" />
+                <ScalarProperty Name="precioUnitario" ColumnName="precioUnitario" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CondicionEgreso">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.CondicionEgreso">
+              <MappingFragment StoreEntitySet="CondicionEgreso">
+                <ScalarProperty Name="idCondicionEgreso" ColumnName="idCondicionEgreso" />
+                <ScalarProperty Name="condicionEgreso1" ColumnName="condicionEgreso" />
+                <ScalarProperty Name="codigoCondicion" ColumnName="codigoCondicion" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Consulta">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Consulta">
+              <MappingFragment StoreEntitySet="Consulta">
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+                <ScalarProperty Name="idTipoConsulta" ColumnName="idTipoConsulta" />
+                <ScalarProperty Name="idSignosVitales" ColumnName="idSignosVitales" />
+                <ScalarProperty Name="idHistoriaClinica" ColumnName="idHistoriaClinica" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="sintomas" ColumnName="sintomas" />
+                <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
+                <ScalarProperty Name="prescripcion" ColumnName="prescripcion" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="fum" ColumnName="fum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ConsultaEstudioLaboratorio">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.ConsultaEstudioLaboratorio">
+              <MappingFragment StoreEntitySet="ConsultaEstudioLaboratorio">
+                <ScalarProperty Name="idConsultaEstudioLaboratorio" ColumnName="idConsultaEstudioLaboratorio" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+                <ScalarProperty Name="idEstudioLaboratorio" ColumnName="idEstudioLaboratorio" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Continente">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Continente">
+              <MappingFragment StoreEntitySet="Continente">
+                <ScalarProperty Name="idContinente" ColumnName="idContinente" />
+                <ScalarProperty Name="continente1" ColumnName="continente" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleVenta">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.DetalleVenta">
+              <MappingFragment StoreEntitySet="DetalleVenta">
+                <ScalarProperty Name="idDetalleVenta" ColumnName="idDetalleVenta" />
+                <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Entidad">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Entidad">
+              <MappingFragment StoreEntitySet="Entidad">
+                <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+                <ScalarProperty Name="entidad1" ColumnName="entidad" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="activo" ColumnName="activo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EspecialidadEgreso">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EspecialidadEgreso">
+              <MappingFragment StoreEntitySet="EspecialidadEgreso">
+                <ScalarProperty Name="idEspecialidadEgreso" ColumnName="idEspecialidadEgreso" />
+                <ScalarProperty Name="especialidadEgreso1" ColumnName="especialidadEgreso" />
+                <ScalarProperty Name="codigoEspecialidad" ColumnName="codigoEspecialidad" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EspecialidadProfesional">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EspecialidadProfesional">
+              <MappingFragment StoreEntitySet="EspecialidadProfesional">
+                <ScalarProperty Name="idEspecialidadProfesional" ColumnName="idEspecialidadProfesional" />
+                <ScalarProperty Name="especialidadProfesional1" ColumnName="especialidadProfesional" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Establecimiento">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Establecimiento">
+              <MappingFragment StoreEntitySet="Establecimiento">
+                <ScalarProperty Name="idEstablecimiento" ColumnName="idEstablecimiento" />
+                <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="representanteLegal" ColumnName="representanteLegal" />
+                <ScalarProperty Name="cedulaRepresentanteLegal" ColumnName="cedulaRepresentanteLegal" />
+                <ScalarProperty Name="redDeAtencion" ColumnName="redDeAtencion" />
+                <ScalarProperty Name="zona" ColumnName="zona" />
+                <ScalarProperty Name="permisoDeFuncionamiento" ColumnName="permisoDeFuncionamiento" />
+                <ScalarProperty Name="registroUnico" ColumnName="registroUnico" />
+                <ScalarProperty Name="logoUrl" ColumnName="logoUrl" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstudioLaboratorio">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.EstudioLaboratorio">
+              <MappingFragment StoreEntitySet="EstudioLaboratorio">
+                <ScalarProperty Name="idEstudioLaboratorio" ColumnName="idEstudioLaboratorio" />
+                <ScalarProperty Name="idCategoriaEstudioLaboratorio" ColumnName="idCategoriaEstudioLaboratorio" />
+                <ScalarProperty Name="estudioLaboratorio1" ColumnName="estudioLaboratorio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Farmacia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Farmacia">
+              <MappingFragment StoreEntitySet="Farmacia">
+                <ScalarProperty Name="idFarmacia" ColumnName="idFarmacia" />
+                <ScalarProperty Name="idEstablecimiento" ColumnName="idEstablecimiento" />
+                <ScalarProperty Name="farmacia1" ColumnName="farmacia" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="extension" ColumnName="extension" />
+                <ScalarProperty Name="representante" ColumnName="representante" />
+                <ScalarProperty Name="cedulaRepresentante" ColumnName="cedulaRepresentante" />
+                <ScalarProperty Name="celularRepresentante" ColumnName="celularRepresentante" />
+                <ScalarProperty Name="tipoFarmacia" ColumnName="tipoFarmacia" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ginecologia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Ginecologia">
+              <MappingFragment StoreEntitySet="Ginecologia">
+                <ScalarProperty Name="idGinecologia" ColumnName="idGinecologia" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HistoriaClinica">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.HistoriaClinica">
+              <MappingFragment StoreEntitySet="HistoriaClinica">
+                <ScalarProperty Name="idHiistoriaClinica" ColumnName="idHiistoriaClinica" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="nroHistoriaClinica" ColumnName="nroHistoriaClinica" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hospitalizacion">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Hospitalizacion">
+              <MappingFragment StoreEntitySet="Hospitalizacion">
+                <ScalarProperty Name="idHospitalizacion" ColumnName="idHospitalizacion" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idCondicionEgreso" ColumnName="idCondicionEgreso" />
+                <ScalarProperty Name="idEspecialidadEgreso" ColumnName="idEspecialidadEgreso" />
+                <ScalarProperty Name="fechaIngreso" ColumnName="fechaIngreso" />
+                <ScalarProperty Name="fechaEgreso" ColumnName="fechaEgreso" />
+                <ScalarProperty Name="horaIngreso" ColumnName="horaIngreso" />
+                <ScalarProperty Name="afeccionPrincipal" ColumnName="afeccionPrincipal" />
+                <ScalarProperty Name="otrasAfecciones" ColumnName="otrasAfecciones" />
+                <ScalarProperty Name="otrasAfecciones2" ColumnName="otrasAfecciones2" />
+                <ScalarProperty Name="causaExterna" ColumnName="causaExterna" />
+                <ScalarProperty Name="idCodigoCIEAfeccionPrincipal" ColumnName="idCodigoCIEAfeccionPrincipal" />
+                <ScalarProperty Name="idCodigoCIEAfeccionSecundaria" ColumnName="idCodigoCIEAfeccionSecundaria" />
+                <ScalarProperty Name="idCodigoCIECausaExterna" ColumnName="idCodigoCIECausaExterna" />
+                <ScalarProperty Name="alta" ColumnName="alta" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LinkArchivo">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.LinkArchivo">
+              <MappingFragment StoreEntitySet="LinkArchivo">
+                <ScalarProperty Name="idLinkArchivo" ColumnName="idLinkArchivo" />
+                <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+                <ScalarProperty Name="idItem" ColumnName="idItem" />
+                <ScalarProperty Name="nombreArchivo" ColumnName="nombreArchivo" />
+                <ScalarProperty Name="tipoArchivo" ColumnName="tipoArchivo" />
+                <ScalarProperty Name="textoEnlace" ColumnName="textoEnlace" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicamento">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Medicamento">
+              <MappingFragment StoreEntitySet="Medicamento">
+                <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+                <ScalarProperty Name="idFarmacia" ColumnName="idFarmacia" />
+                <ScalarProperty Name="idCategoriaMedicamento" ColumnName="idCategoriaMedicamento" />
+                <ScalarProperty Name="nombreComercial" ColumnName="nombreComercial" />
+                <ScalarProperty Name="nombreGenerico" ColumnName="nombreGenerico" />
+                <ScalarProperty Name="ingresado" ColumnName="ingresado" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MedicamentoHospitalizacion">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.MedicamentoHospitalizacion">
+              <MappingFragment StoreEntitySet="MedicamentoHospitalizacion">
+                <ScalarProperty Name="idMedicamentoHospitalizacion" ColumnName="idMedicamentoHospitalizacion" />
+                <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+                <ScalarProperty Name="idHospitalizacion" ColumnName="idHospitalizacion" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="notasDeEvolucion" ColumnName="notasDeEvolucion" />
+                <ScalarProperty Name="prescripcionMedica" ColumnName="prescripcionMedica" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menu">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Menu">
+              <MappingFragment StoreEntitySet="Menu">
+                <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+                <ScalarProperty Name="menu1" ColumnName="menu" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Obstetricia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Obstetricia">
+              <MappingFragment StoreEntitySet="Obstetricia">
+                <ScalarProperty Name="idObstetricia" ColumnName="idObstetricia" />
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="fecPrimerParto" ColumnName="fecPrimerParto" />
+                <ScalarProperty Name="gestas" ColumnName="gestas" />
+                <ScalarProperty Name="partos" ColumnName="partos" />
+                <ScalarProperty Name="cesareas" ColumnName="cesareas" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Odontologia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Odontologia">
+              <MappingFragment StoreEntitySet="Odontologia">
+                <ScalarProperty Name="idOdontologia" ColumnName="idOdontologia" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paciente">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Paciente">
+              <MappingFragment StoreEntitySet="Paciente">
+                <ScalarProperty Name="idPaciente" ColumnName="idPaciente" />
+                <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+                <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="celular" ColumnName="celular" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="fecNacimiento" ColumnName="fecNacimiento" />
+                <ScalarProperty Name="etnia" ColumnName="etnia" />
+                <ScalarProperty Name="estadoCivil" ColumnName="estadoCivil" />
+                <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+                <ScalarProperty Name="paisNacimiento" ColumnName="paisNacimiento" />
+                <ScalarProperty Name="discapacidad" ColumnName="discapacidad" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pais">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Pais">
+              <MappingFragment StoreEntitySet="Pais">
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="idContinente" ColumnName="idContinente" />
+                <ScalarProperty Name="pais1" ColumnName="pais" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parroquia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Parroquia">
+              <MappingFragment StoreEntitySet="Parroquia">
+                <ScalarProperty Name="idParroquia" ColumnName="idParroquia" />
+                <ScalarProperty Name="idCanton" ColumnName="idCanton" />
+                <ScalarProperty Name="parroquia1" ColumnName="parroquia" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Path">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Path">
+              <MappingFragment StoreEntitySet="Path">
+                <ScalarProperty Name="idPath" ColumnName="idPath" />
+                <ScalarProperty Name="idMenu" ColumnName="idMenu" />
+                <ScalarProperty Name="idSubMenu" ColumnName="idSubMenu" />
+                <ScalarProperty Name="url" ColumnName="url" />
+                <ScalarProperty Name="icono" ColumnName="icono" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pediatria">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Pediatria">
+              <MappingFragment StoreEntitySet="Pediatria">
+                <ScalarProperty Name="idPediatria" ColumnName="idPediatria" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PermisoPerfil">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.PermisoPerfil">
+              <MappingFragment StoreEntitySet="PermisoPerfil">
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+                <ScalarProperty Name="idPermisoPerfil" ColumnName="idPermisoPerfil" />
+                <ScalarProperty Name="idPath" ColumnName="idPath" />
+                <ScalarProperty Name="idRol" ColumnName="idRol" />
+                <ScalarProperty Name="selecciona" ColumnName="selecciona" />
+                <ScalarProperty Name="inserta" ColumnName="inserta" />
+                <ScalarProperty Name="actualiza" ColumnName="actualiza" />
+                <ScalarProperty Name="elimina" ColumnName="elimina" />
+                <ScalarProperty Name="mostrarEnMenu" ColumnName="mostrarEnMenu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Precio">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Precio">
+              <MappingFragment StoreEntitySet="Precio">
+                <ScalarProperty Name="idPrecio" ColumnName="idPrecio" />
+                <ScalarProperty Name="idMedicamento" ColumnName="idMedicamento" />
+                <ScalarProperty Name="fechaInicio" ColumnName="fechaInicio" />
+                <ScalarProperty Name="fechaFin" ColumnName="fechaFin" />
+                <ScalarProperty Name="precio1" ColumnName="precio" />
+                <ScalarProperty Name="grabaIVA" ColumnName="grabaIVA" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Proveedor">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Proveedor">
+              <MappingFragment StoreEntitySet="Proveedor">
+                <ScalarProperty Name="idProveedor" ColumnName="idProveedor" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="ruc" ColumnName="ruc" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="telefonoContacto" ColumnName="telefonoContacto" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Provincia">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Provincia">
+              <MappingFragment StoreEntitySet="Provincia">
+                <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+                <ScalarProperty Name="idPais" ColumnName="idPais" />
+                <ScalarProperty Name="provincia1" ColumnName="provincia" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receta">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Receta">
+              <MappingFragment StoreEntitySet="Receta">
+                <ScalarProperty Name="idReceta" ColumnName="idReceta" />
+                <ScalarProperty Name="idConsulta" ColumnName="idConsulta" />
+                <ScalarProperty Name="receta1" ColumnName="receta" />
+                <ScalarProperty Name="dosis" ColumnName="dosis" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResultadoEstudioLaboratorio">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.ResultadoEstudioLaboratorio">
+              <MappingFragment StoreEntitySet="ResultadoEstudioLaboratorio">
+                <ScalarProperty Name="idResultadoEstudioLaboratorio" ColumnName="idResultadoEstudioLaboratorio" />
+                <ScalarProperty Name="idConsultaEstudioLaboratorio" ColumnName="idConsultaEstudioLaboratorio" />
+                <ScalarProperty Name="resultadoEstudioLaboratorio1" ColumnName="resultadoEstudioLaboratorio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SignosVitales">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.SignosVitales">
+              <MappingFragment StoreEntitySet="SignosVitales">
+                <ScalarProperty Name="idSignosVitales" ColumnName="idSignosVitales" />
+                <ScalarProperty Name="peso" ColumnName="peso" />
+                <ScalarProperty Name="talla" ColumnName="talla" />
+                <ScalarProperty Name="temperatura" ColumnName="temperatura" />
+                <ScalarProperty Name="frecuenciaCardiaca" ColumnName="frecuenciaCardiaca" />
+                <ScalarProperty Name="presionArterial" ColumnName="presionArterial" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subMenu">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.subMenu">
+              <MappingFragment StoreEntitySet="subMenu">
+                <ScalarProperty Name="idSubMenu" ColumnName="idSubMenu" />
+                <ScalarProperty Name="submenu1" ColumnName="submenu" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoConsulta">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.TipoConsulta">
+              <MappingFragment StoreEntitySet="TipoConsulta">
+                <ScalarProperty Name="idTipoConsulta" ColumnName="idTipoConsulta" />
+                <ScalarProperty Name="tipoConsulta1" ColumnName="tipoConsulta" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoDocumento">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.TipoDocumento">
+              <MappingFragment StoreEntitySet="TipoDocumento">
+                <ScalarProperty Name="idTipoDocumento" ColumnName="idTipoDocumento" />
+                <ScalarProperty Name="tipoDocumento1" ColumnName="tipoDocumento" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transaccion">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Transaccion">
+              <MappingFragment StoreEntitySet="Transaccion">
+                <ScalarProperty Name="idTransaccion" ColumnName="idTransaccion" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="usuario" ColumnName="usuario" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="idEntidad" ColumnName="idEntidad" />
+                <ScalarProperty Name="idItem" ColumnName="idItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Venta">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.Venta">
+              <MappingFragment StoreEntitySet="Venta">
+                <ScalarProperty Name="idVenta" ColumnName="idVenta" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="cliente" ColumnName="cliente" />
+                <ScalarProperty Name="documento" ColumnName="documento" />
+                <ScalarProperty Name="subtotal12" ColumnName="subtotal12" />
+                <ScalarProperty Name="subtotal0" ColumnName="subtotal0" />
+                <ScalarProperty Name="iva" ColumnName="iva" />
+                <ScalarProperty Name="ice" ColumnName="ice" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="borrado" ColumnName="borrado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetRoles">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetRoles">
+              <MappingFragment StoreEntitySet="AspNetRoles">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserClaims">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUserClaims">
+              <MappingFragment StoreEntitySet="AspNetUserClaims">
+                <ScalarProperty Name="ClaimValue" ColumnName="ClaimValue" />
+                <ScalarProperty Name="ClaimType" ColumnName="ClaimType" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUserLogins">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUserLogins">
+              <MappingFragment StoreEntitySet="AspNetUserLogins">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProviderKey" ColumnName="ProviderKey" />
+                <ScalarProperty Name="LoginProvider" ColumnName="LoginProvider" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AspNetUsers">
+            <EntityTypeMapping TypeName="SMHospitalDelDiaModel.AspNetUsers">
+              <MappingFragment StoreEntitySet="AspNetUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="AccessFailedCount" ColumnName="AccessFailedCount" />
+                <ScalarProperty Name="LockoutEnabled" ColumnName="LockoutEnabled" />
+                <ScalarProperty Name="LockoutEndDateUtc" ColumnName="LockoutEndDateUtc" />
+                <ScalarProperty Name="TwoFactorEnabled" ColumnName="TwoFactorEnabled" />
+                <ScalarProperty Name="PhoneNumberConfirmed" ColumnName="PhoneNumberConfirmed" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="SecurityStamp" ColumnName="SecurityStamp" />
+                <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
+                <ScalarProperty Name="EmailConfirmed" ColumnName="EmailConfirmed" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="titulo" ColumnName="titulo" />
+                <ScalarProperty Name="fechaNacimiento" ColumnName="fechaNacimiento" />
+                <ScalarProperty Name="genero" ColumnName="genero" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+                <ScalarProperty Name="nombres" ColumnName="nombres" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="cedula" ColumnName="cedula" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="AspNetUserRoles" TypeName="SMHospitalDelDiaModel.AspNetUserRoles" StoreEntitySet="AspNetUserRoles">
+            <EndProperty Name="AspNetUsers">
+              <ScalarProperty Name="Id" ColumnName="UserId" />
+            </EndProperty>
+            <EndProperty Name="AspNetRoles">
+              <ScalarProperty Name="Id" ColumnName="RoleId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="135bd9ac3e3b450da7e2711334634c8b" Name="Diagram1">
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.AntecedentesPatologicos" Width="1.5" PointX="14.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Canton" Width="1.5" PointX="7.5" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.CategoriaEstudioLaboratorio" Width="1.5" PointX="17.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.CategoriaMedicamento" Width="1.5" PointX="14.25" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.CodigoCIE" Width="1.5" PointX="17" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Compra" Width="1.5" PointX="18.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.CondicionEgreso" Width="1.5" PointX="17" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Consulta" Width="1.5" PointX="16.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.ConsultaEstudioLaboratorio" Width="1.5" PointX="21.75" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Continente" Width="1.5" PointX="0.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.DetalleVenta" Width="1.5" PointX="21.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Entidad" Width="1.5" PointX="2.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.EspecialidadEgreso" Width="1.5" PointX="17" PointY="39.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.EspecialidadProfesional" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Establecimiento" Width="1.5" PointX="12" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.EstudioLaboratorio" Width="1.5" PointX="19.5" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Farmacia" Width="1.5" PointX="14.25" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Ginecologia" Width="1.5" PointX="18.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.HistoriaClinica" Width="1.5" PointX="14.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Hospitalizacion" Width="1.5" PointX="19.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.LinkArchivo" Width="1.5" PointX="5" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Medicamento" Width="1.5" PointX="16.5" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.MedicamentoHospitalizacion" Width="1.5" PointX="21.5" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Menu" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Obstetricia" Width="1.5" PointX="14.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Odontologia" Width="1.5" PointX="18.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Paciente" Width="1.5" PointX="12" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Pais" Width="1.5" PointX="3" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Parroquia" Width="1.5" PointX="9.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Path" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Pediatria" Width="1.5" PointX="18.75" PointY="27.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.PermisoPerfil" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Precio" Width="1.5" PointX="18.75" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Proveedor" Width="1.5" PointX="16.5" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Provincia" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Receta" Width="1.5" PointX="18.75" PointY="36" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.ResultadoEstudioLaboratorio" Width="1.5" PointX="24" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.SignosVitales" Width="1.5" PointX="14.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.subMenu" Width="1.5" PointX="0.75" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.TipoConsulta" Width="1.5" PointX="14.25" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.TipoDocumento" Width="1.5" PointX="9.75" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Transaccion" Width="1.5" PointX="5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.Venta" Width="1.5" PointX="19.5" PointY="3" IsExpanded="true" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_AntecedentesPatologicos_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Canton_Provincia" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Parroquia_Canton" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_EstudioLaboratorio_CategoriaEstudioLaboratorio" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Medicamento_CategoriaMedicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_CodigoCIE" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_CodigoCIE1" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_CodigoCIE2" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Compra_Medicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Compra_Proveedor" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_CondicionEgreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Consulta_HistoriaClinica" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Consulta_SignosVitales" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Consulta_TipoConsulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_ConsultaEstudioLaboratorio_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Ginecologia_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Odontologia_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Pediatria_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Receta_Consulta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_ConsultaEstudioLaboratorio_EstudioLaboratorio" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_ResultadoEstudioLaboratorio_ConsultaEstudioLaboratorio" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Pais_Continente" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_DetalleVenta_Medicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_DetalleVenta_Venta" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_LinkArchivo_Entidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Transaccion_Entidad" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_EspecialidadEgreso" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Establecimiento_Parroquia" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Farmacia_Establecimiento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Medicamento_Farmacia" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_HistoriaClinica_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Hospitalizacion_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_MedicamentoHospitalizacion_Hospitalizacion" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_MedicamentoHospitalizacion_Medicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Precio_Medicamento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Path_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Obstetricia_Paciente" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Paciente_Parroquia" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Paciente_TipoDocumento" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Provincia_Pais" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_Path_subMenu" ManuallyRouted="false" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_PermisoPerfil_Path" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="14.25" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.AspNetUserLogins" Width="1.5" PointX="5.25" PointY="17" />
+        <EntityTypeShape EntityType="SMHospitalDelDiaModel.AspNetUsers" Width="1.5" PointX="3" PointY="13.875" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_PermisoPerfil_AspNetRoles" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="SMHospitalDelDiaModel.AspNetUserRoles" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
